@@ -1,0 +1,2400 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Século XIX em Dois Mundos — EUA (1803–1904) e Brasil, 2º Reinado (1840–1889)</title>
+<meta name="description" content="Aula completa de História: Estados Unidos no século XIX e Segundo Reinado brasileiro. Marcha para o Oeste, Destino Manifesto, Guerra de Secessão, Jim Crow, doutrinas imperialistas, parlamentarismo às avessas, economia cafeeira, fim do tráfico, Guerra do Paraguai.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;0,6..96,800;1,6..96,400;1,6..96,600&amp;family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   SISTEMA VISUAL — "Prensa do Século XIX"
+   Papel de arquivo · tipos didones · tinta índigo de imprensa
+   Azul = Estados Unidos · Ouro = Brasil · Verdete = aprofundamento
+   ============================================================ */
+:root{
+  --papel:        #F1EFE8;
+  --papel-alto:   #FCFBF7;
+  --papel-fundo:  #E6E3D8;
+  --tinta:        #16211F;
+  --tinta-media:  #4C5754;
+  --tinta-fraca:  #7E8885;
+  --linha:        #D9D4C5;
+  --linha-forte:  #BFB8A4;
+
+  --eua:          #2E4B6E;
+  --eua-alto:     #4A6E96;
+  --eua-tenue:    #E6ECF3;
+
+  --br:           #96661A;
+  --br-alto:      #B98527;
+  --br-tenue:     #F6EFDD;
+
+  --verdete:      #2C6759;
+  --verdete-tenue:#E3EFEB;
+
+  --carmim:       #9C3A33;
+  --carmim-tenue: #F8E9E6;
+
+  --display: 'Bodoni Moda', 'Didot', Georgia, 'Times New Roman', serif;
+  --corpo: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  --raio: 3px;
+  --largura: 1080px;
+  --sombra: 0 1px 2px rgba(22,33,31,.05), 0 8px 24px -12px rgba(22,33,31,.14);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:104px;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
+}
+body{
+  margin:0;
+  background:var(--papel);
+  background-image:
+    radial-gradient(circle at 12% 8%, rgba(46,75,110,.035), transparent 42%),
+    radial-gradient(circle at 88% 22%, rgba(150,102,26,.04), transparent 45%);
+  color:var(--tinta);
+  font-family:var(--corpo);
+  font-size:17px;
+  line-height:1.72;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%}
+a{color:var(--eua);text-decoration-thickness:1px;text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2.5px solid var(--verdete);outline-offset:3px;border-radius:2px}
+
+/* ---------- BARRA DE PROGRESSO + NAV ---------- */
+#progresso{
+  position:fixed;top:0;left:0;height:3px;width:0%;
+  background:linear-gradient(90deg,var(--eua),var(--verdete) 55%,var(--br));
+  z-index:120;transition:width .1s linear;
+}
+.topo{
+  position:sticky;top:0;z-index:100;
+  background:rgba(241,239,232,.93);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--linha);
+}
+.topo-int{
+  max-width:var(--largura);margin:0 auto;padding:10px 22px;
+  display:flex;align-items:center;gap:18px;
+}
+.marca{
+  font-family:var(--display);font-weight:700;font-size:.98rem;letter-spacing:.01em;
+  white-space:nowrap;flex-shrink:0;line-height:1.2;
+}
+.marca span{display:block;font-family:var(--mono);font-size:.6rem;font-weight:500;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--tinta-fraca)}
+nav{
+  display:flex;gap:2px;overflow-x:auto;scrollbar-width:thin;
+  margin-left:auto;padding-bottom:2px;
+}
+nav::-webkit-scrollbar{height:3px}
+nav::-webkit-scrollbar-thumb{background:var(--linha-forte);border-radius:2px}
+nav a{
+  font-family:var(--mono);font-size:.68rem;font-weight:500;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--tinta-media);text-decoration:none;
+  padding:7px 11px;border-radius:2px;white-space:nowrap;transition:.18s;
+  border-bottom:2px solid transparent;
+}
+nav a:hover{background:var(--papel-fundo);color:var(--tinta)}
+nav a.ativo{color:var(--tinta);border-bottom-color:var(--eua);background:var(--papel-fundo)}
+nav a.ativo[data-cor="br"]{border-bottom-color:var(--br)}
+nav a.ativo[data-cor="vd"]{border-bottom-color:var(--verdete)}
+
+/* ---------- ESTRUTURA ---------- */
+.faixa{max-width:var(--largura);margin:0 auto;padding:0 22px}
+section{scroll-margin-top:104px}
+.bloco{padding:58px 0 12px}
+
+/* ---------- CAPA ---------- */
+.capa{
+  padding:76px 0 62px;border-bottom:1px solid var(--linha);
+  position:relative;overflow:hidden;
+}
+.capa-selo{
+  font-family:var(--mono);font-size:.66rem;font-weight:500;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--tinta-fraca);margin-bottom:22px;
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+}
+.capa-selo::before{content:"";width:44px;height:1px;background:var(--linha-forte)}
+.capa h1{
+  font-family:var(--display);font-weight:700;font-size:clamp(2.5rem,7vw,4.7rem);
+  line-height:1.02;letter-spacing:-.022em;margin:0 0 6px;max-width:16ch;
+}
+.capa h1 em{font-style:italic;font-weight:400}
+.capa .sub{
+  font-family:var(--display);font-style:italic;font-weight:400;
+  font-size:clamp(1.15rem,2.6vw,1.7rem);color:var(--tinta-media);
+  margin:16px 0 30px;max-width:34ch;line-height:1.34;
+}
+.capa-linha{display:flex;flex-wrap:wrap;gap:0;margin:34px 0 0;border-top:1px solid var(--linha-forte)}
+.capa-item{
+  flex:1 1 190px;padding:18px 22px 18px 0;border-right:1px solid var(--linha);
+}
+.capa-item:last-child{border-right:0}
+.capa-item dt{
+  font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--tinta-fraca);margin-bottom:5px;
+}
+.capa-item dd{margin:0;font-size:.94rem;line-height:1.45;font-weight:500}
+.aviso-capa{
+  margin-top:34px;padding:16px 20px;background:var(--papel-alto);
+  border:1px solid var(--linha);border-left:3px solid var(--verdete);
+  font-size:.88rem;line-height:1.6;color:var(--tinta-media);border-radius:var(--raio);
+}
+.aviso-capa strong{color:var(--tinta)}
+
+/* ---------- TÍTULOS ---------- */
+.parte-cabeca{
+  margin:0 0 40px;padding:30px 0 22px;border-top:2px solid var(--tinta);
+}
+.parte-cabeca .eyebrow{
+  font-family:var(--mono);font-size:.66rem;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;margin-bottom:14px;display:inline-block;
+  padding:4px 10px;border-radius:2px;
+}
+.parte-cabeca h2{
+  font-family:var(--display);font-weight:700;font-size:clamp(1.9rem,4.6vw,3.05rem);
+  line-height:1.08;letter-spacing:-.018em;margin:0 0 12px;
+}
+.parte-cabeca p{margin:0;max-width:62ch;color:var(--tinta-media);font-size:1.02rem}
+.p-eua .eyebrow{background:var(--eua-tenue);color:var(--eua)}
+.p-eua{border-top-color:var(--eua)}
+.p-br .eyebrow{background:var(--br-tenue);color:var(--br)}
+.p-br{border-top-color:var(--br)}
+.p-vd .eyebrow{background:var(--verdete-tenue);color:var(--verdete)}
+.p-vd{border-top-color:var(--verdete)}
+
+h3{
+  font-family:var(--display);font-weight:700;font-size:clamp(1.35rem,3vw,1.85rem);
+  line-height:1.18;letter-spacing:-.012em;margin:52px 0 8px;
+}
+h3 .num{
+  font-family:var(--mono);font-size:.72rem;font-weight:700;letter-spacing:.1em;
+  color:var(--tinta-fraca);display:block;margin-bottom:9px;
+}
+h4{
+  font-family:var(--corpo);font-weight:700;font-size:1.06rem;letter-spacing:-.005em;
+  margin:32px 0 8px;line-height:1.35;
+}
+h5{
+  font-family:var(--mono);font-weight:700;font-size:.7rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--tinta-fraca);margin:26px 0 8px;
+}
+p{margin:0 0 15px}
+p.abre{font-size:1.08rem;color:var(--tinta-media);max-width:66ch}
+strong{font-weight:700}
+em{font-style:italic}
+.ano{font-family:var(--mono);font-weight:700;font-size:.92em;letter-spacing:-.01em}
+
+ul,ol{margin:0 0 16px;padding-left:1.25em}
+li{margin-bottom:8px}
+li::marker{color:var(--tinta-fraca)}
+ul.limpa{list-style:none;padding-left:0}
+ul.limpa li{
+  padding-left:22px;position:relative;
+}
+ul.limpa li::before{
+  content:"▸";position:absolute;left:0;top:0;color:var(--eua);font-size:.85em;
+}
+
+/* ---------- CAIXAS ---------- */
+.caixa{
+  background:var(--papel-alto);border:1px solid var(--linha);border-radius:var(--raio);
+  padding:22px 24px;margin:24px 0;box-shadow:var(--sombra);
+}
+.caixa > :last-child{margin-bottom:0}
+.caixa-rot{
+  font-family:var(--mono);font-size:.64rem;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;margin:0 0 12px;display:flex;align-items:center;gap:9px;
+}
+.caixa-rot::after{content:"";flex:1;height:1px;background:var(--linha)}
+
+.c-comp{border-left:3px solid var(--verdete);background:var(--verdete-tenue)}
+.c-comp .caixa-rot{color:var(--verdete)}
+.c-atencao{border-left:3px solid var(--carmim);background:var(--carmim-tenue)}
+.c-atencao .caixa-rot{color:var(--carmim)}
+.c-chave{border-left:3px solid var(--eua);background:var(--eua-tenue)}
+.c-chave .caixa-rot{color:var(--eua)}
+.c-brasil{border-left:3px solid var(--br);background:var(--br-tenue)}
+.c-brasil .caixa-rot{color:var(--br)}
+.c-fonte{
+  border:0;border-top:1px solid var(--linha);background:none;box-shadow:none;
+  padding:10px 0 0;margin:12px 0 24px;font-family:var(--mono);
+  font-size:.7rem;line-height:1.55;color:var(--tinta-fraca);
+}
+
+/* ---------- DEFINIÇÃO ---------- */
+.def{
+  border:1px solid var(--linha-forte);border-radius:var(--raio);
+  padding:0;margin:22px 0;overflow:hidden;background:var(--papel-alto);
+}
+.def-termo{
+  background:var(--tinta);color:var(--papel);padding:9px 18px;
+  font-family:var(--mono);font-size:.7rem;font-weight:700;letter-spacing:.13em;
+  text-transform:uppercase;
+}
+.def-corpo{padding:16px 18px;font-size:.97rem}
+.def-corpo > :last-child{margin-bottom:0}
+
+/* ---------- ESQUEMAS / DIAGRAMAS EM TEXTO ---------- */
+.esquema{
+  font-family:var(--mono);font-size:.78rem;line-height:1.85;
+  background:var(--tinta);color:#E8EDEA;border-radius:var(--raio);
+  padding:22px 24px;margin:24px 0;overflow-x:auto;white-space:pre;
+  box-shadow:var(--sombra);
+}
+.esquema b{color:#FFD489;font-weight:700}
+.esquema i{color:#9EC5EA;font-style:normal;font-weight:700}
+.esquema u{color:#F0A69E;text-decoration:none;font-weight:700}
+.esquema s{color:#8FD3BE;text-decoration:none;font-weight:700}
+
+/* ---------- FLUXO EM CARTÕES ---------- */
+.fluxo{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0;align-items:stretch}
+.fluxo-passo{
+  flex:1 1 168px;background:var(--papel-alto);border:1px solid var(--linha);
+  border-top:3px solid var(--eua);border-radius:var(--raio);padding:14px 15px;
+  position:relative;font-size:.88rem;line-height:1.5;
+}
+.fluxo-passo[data-cor="br"]{border-top-color:var(--br)}
+.fluxo-passo[data-cor="vd"]{border-top-color:var(--verdete)}
+.fluxo-passo[data-cor="cm"]{border-top-color:var(--carmim)}
+.fluxo-passo .p-num{
+  font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:.14em;
+  color:var(--tinta-fraca);display:block;margin-bottom:6px;
+}
+.fluxo-passo b{display:block;margin-bottom:4px;font-size:.94rem}
+
+/* ---------- TABELAS ---------- */
+.tab-env{overflow-x:auto;margin:24px 0;border:1px solid var(--linha);border-radius:var(--raio);background:var(--papel-alto)}
+table{border-collapse:collapse;width:100%;font-size:.88rem;min-width:520px}
+caption{
+  caption-side:top;text-align:left;padding:14px 16px 10px;
+  font-family:var(--mono);font-size:.66rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--tinta-fraca);border-bottom:1px solid var(--linha);
+}
+th,td{padding:9px 14px;text-align:left;border-bottom:1px solid var(--linha);vertical-align:top}
+thead th{
+  background:var(--papel-fundo);font-family:var(--mono);font-size:.66rem;
+  font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--tinta-media);
+  border-bottom:1.5px solid var(--linha-forte);
+}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:var(--papel-fundo)}
+td.num,th.num{text-align:right;font-family:var(--mono);font-size:.82rem;white-space:nowrap}
+.destaca{background:var(--br-tenue)!important;font-weight:600}
+.destaca-a{background:var(--eua-tenue)!important;font-weight:600}
+
+/* ---------- COMPARAÇÃO DUAS COLUNAS ---------- */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0}
+.duo-lado{
+  background:var(--papel-alto);border:1px solid var(--linha);border-radius:var(--raio);
+  padding:18px 20px;
+}
+.duo-lado h6{
+  font-family:var(--display);font-size:1.12rem;font-weight:700;margin:0 0 4px;
+}
+.duo-lado .tag{
+  font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;display:block;margin-bottom:8px;
+}
+.duo-lado ul{margin-bottom:0;font-size:.91rem}
+.duo-a{border-top:3px solid var(--eua)} .duo-a .tag{color:var(--eua)}
+.duo-b{border-top:3px solid var(--carmim)} .duo-b .tag{color:var(--carmim)}
+.duo-c{border-top:3px solid var(--br)} .duo-c .tag{color:var(--br)}
+.duo-d{border-top:3px solid var(--verdete)} .duo-d .tag{color:var(--verdete)}
+
+/* ---------- LINHA DO TEMPO DUPLA (elemento-assinatura) ---------- */
+.espinha{
+  position:relative;margin:38px 0 10px;padding:0;
+}
+.espinha::before{
+  content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;
+  background:linear-gradient(180deg,transparent,var(--linha-forte) 5%,var(--linha-forte) 95%,transparent);
+  transform:translateX(-.5px);
+}
+.esp-cab{display:grid;grid-template-columns:1fr 92px 1fr;align-items:center;margin-bottom:20px;gap:8px}
+.esp-cab span{
+  font-family:var(--display);font-weight:700;font-size:1.05rem;
+}
+.esp-cab .l{text-align:right;color:var(--eua)}
+.esp-cab .r{text-align:left;color:var(--br)}
+.esp-cab .m{
+  font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--tinta-fraca);text-align:center;
+}
+.esp-linha{
+  display:grid;grid-template-columns:1fr 92px 1fr;gap:8px;align-items:start;
+  margin-bottom:14px;
+}
+.esp-ano{
+  font-family:var(--mono);font-size:.76rem;font-weight:700;text-align:center;
+  color:var(--tinta);background:var(--papel);padding:4px 0;border-radius:2px;
+  border:1px solid var(--linha-forte);align-self:start;position:relative;z-index:2;
+}
+.esp-cel{
+  background:var(--papel-alto);border:1px solid var(--linha);border-radius:var(--raio);
+  padding:10px 13px;font-size:.85rem;line-height:1.5;
+}
+.esp-cel:empty{background:none;border:0;padding:0}
+.esp-e{border-right:3px solid var(--eua)}
+.esp-d{border-left:3px solid var(--br)}
+.esp-cel b{display:block;font-size:.88rem;margin-bottom:2px}
+.esp-cel.laco{border-color:var(--verdete);border-width:1px 1px 1px 3px;border-left-color:var(--verdete);background:var(--verdete-tenue)}
+.esp-cel.laco-e{border-width:1px 3px 1px 1px;border-right-color:var(--verdete)}
+
+/* ---------- VÍDEOS ---------- */
+.videos{display:grid;grid-template-columns:repeat(auto-fill,minmax(292px,1fr));gap:12px;margin:24px 0}
+.video{
+  display:block;text-decoration:none;color:inherit;background:var(--papel-alto);
+  border:1px solid var(--linha);border-left:3px solid var(--carmim);
+  border-radius:var(--raio);padding:15px 17px;transition:.18s;box-shadow:var(--sombra);
+}
+.video:hover{transform:translateY(-2px);border-color:var(--carmim);
+  box-shadow:0 4px 18px -6px rgba(156,58,51,.28)}
+.video .v-canal{
+  font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--carmim);margin-bottom:6px;
+  display:flex;align-items:center;gap:7px;
+}
+.video .v-canal::before{
+  content:"▶";font-size:.72em;
+}
+.video .v-tit{
+  font-family:var(--corpo);font-weight:700;font-size:.97rem;line-height:1.34;
+  margin-bottom:6px;
+}
+.video .v-desc{font-size:.83rem;line-height:1.5;color:var(--tinta-media);margin:0}
+.video .v-link{
+  font-family:var(--mono);font-size:.63rem;color:var(--tinta-fraca);
+  margin-top:9px;display:block;word-break:break-all;
+}
+
+/* ---------- QUESTÕES ---------- */
+.questao{
+  background:var(--papel-alto);border:1px solid var(--linha-forte);
+  border-radius:var(--raio);margin:24px 0;overflow:hidden;
+}
+.q-cab{
+  background:var(--papel-fundo);padding:11px 18px;border-bottom:1px solid var(--linha-forte);
+  font-family:var(--mono);font-size:.66rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--tinta-media);
+}
+.q-corpo{padding:18px 20px}
+.q-corpo > :last-child{margin-bottom:0}
+.q-alt{list-style:none;padding:0;margin:14px 0 0;font-size:.92rem}
+.q-alt li{
+  padding:7px 12px 7px 34px;position:relative;border-bottom:1px solid var(--linha);
+  margin:0;line-height:1.55;
+}
+.q-alt li:last-child{border-bottom:0}
+.q-alt li::before{
+  content:attr(data-l);position:absolute;left:10px;top:7px;
+  font-family:var(--mono);font-weight:700;font-size:.82rem;color:var(--tinta-fraca);
+}
+.q-alt li.certa{background:var(--verdete-tenue);font-weight:600}
+.q-alt li.certa::before{color:var(--verdete)}
+details.gab{margin-top:16px;border-top:1px solid var(--linha);padding-top:14px}
+details.gab summary{
+  cursor:pointer;font-family:var(--mono);font-size:.68rem;font-weight:700;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--verdete);
+  list-style:none;display:flex;align-items:center;gap:8px;padding:5px 0;
+}
+details.gab summary::-webkit-details-marker{display:none}
+details.gab summary::before{content:"+";font-size:1.1em;line-height:1}
+details.gab[open] summary::before{content:"–"}
+details.gab summary:hover{color:var(--tinta)}
+.gab-corpo{padding-top:12px;font-size:.94rem}
+.gab-corpo > :last-child{margin-bottom:0}
+
+/* ---------- REVISÃO FINAL ---------- */
+.flash{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:11px;margin:24px 0}
+.flash-c{
+  background:var(--papel-alto);border:1px solid var(--linha);border-radius:var(--raio);
+  padding:14px 16px;font-size:.88rem;line-height:1.52;
+}
+.flash-c b{
+  display:block;font-family:var(--mono);font-size:.63rem;font-weight:700;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--eua);margin-bottom:6px;
+}
+.flash-c[data-c="br"] b{color:var(--br)}
+.flash-c[data-c="vd"] b{color:var(--verdete)}
+.flash-c[data-c="cm"] b{color:var(--carmim)}
+
+/* ---------- RODAPÉ ---------- */
+footer{
+  margin-top:74px;border-top:2px solid var(--tinta);
+  padding:36px 0 54px;font-size:.85rem;color:var(--tinta-media);
+}
+footer .f-int{max-width:var(--largura);margin:0 auto;padding:0 22px}
+footer p{margin-bottom:9px}
+.topo-btn{
+  display:inline-block;margin-top:14px;font-family:var(--mono);font-size:.66rem;
+  font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--tinta);text-decoration:none;border:1px solid var(--linha-forte);
+  padding:8px 16px;border-radius:2px;transition:.18s;
+}
+.topo-btn:hover{background:var(--tinta);color:var(--papel);border-color:var(--tinta)}
+
+/* ---------- RESPONSIVO ---------- */
+@media (max-width:860px){
+  .duo{grid-template-columns:1fr}
+
+  /* A espinha dupla vira uma coluna: ano à esquerda, EUA em cima, Brasil embaixo */
+  .espinha::before{left:29px}
+  .esp-cab,.esp-linha{grid-template-columns:58px 1fr;gap:8px 10px}
+  .esp-cab{margin-bottom:16px}
+  .esp-cab .m{display:none}
+  .esp-cab .l{grid-column:2;grid-row:1;text-align:left}
+  .esp-cab .r{grid-column:2;grid-row:2;text-align:left}
+  .esp-linha > *:nth-child(1){grid-column:2;grid-row:1}
+  .esp-linha > *:nth-child(2){grid-column:1;grid-row:1 / span 2;align-self:start}
+  .esp-linha > *:nth-child(3){grid-column:2;grid-row:2}
+  .esp-ano{font-size:.68rem;line-height:1.3}
+  /* todo destaque passa a ser uma barra à esquerda */
+  .esp-cel{border-width:1px 1px 1px 3px;border-right-color:var(--linha)}
+  .esp-linha > .esp-cel:nth-child(1){border-left-color:var(--eua)}
+  .esp-linha > .esp-cel:nth-child(3){border-left-color:var(--br)}
+  .esp-linha > .esp-cel.laco{border-left-color:var(--verdete)}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .faixa{padding:0 16px}
+  .topo-int{padding:8px 16px;gap:10px}
+  .marca{font-size:.85rem}
+  .capa{padding:48px 0 42px}
+  .capa-item{flex:1 1 100%;border-right:0;border-bottom:1px solid var(--linha);padding:14px 0}
+  .capa-item:last-child{border-bottom:0}
+  .bloco{padding:40px 0 8px}
+  .caixa{padding:17px 18px}
+  .esquema{font-size:.68rem;padding:16px 15px}
+  .videos{grid-template-columns:1fr}
+}
+
+/* ---------- IMPRESSÃO ---------- */
+@media print{
+  @page{margin:1.5cm}
+  body{background:#fff;font-size:10.5pt;line-height:1.5}
+  #progresso,.topo,.topo-btn{display:none!important}
+  .caixa,.questao,.tab-env,.def,.flash-c,.duo-lado,.fluxo-passo,.esp-cel{
+    box-shadow:none;break-inside:avoid;background:#fff!important}
+  .esquema{background:#fff;color:#000;border:1px solid #999;break-inside:avoid}
+  .esquema b,.esquema i,.esquema u,.esquema s{color:#000;text-decoration:underline}
+  h3,h4{break-after:avoid}
+  .parte-cabeca{break-before:page}
+  details.gab[open] .gab-corpo,details.gab .gab-corpo{display:block!important}
+  details.gab summary{color:#000}
+  .video{border:1px solid #999}
+  .video .v-link{color:#333}
+  a{color:#000}
+}
+</style>
+</head>
+<body>
+
+<div id="progresso"></div>
+
+<header class="topo">
+  <div class="topo-int">
+    <div class="marca">Século XIX em Dois Mundos<span>História · 2º Ano · B3</span></div>
+    <nav id="nav">
+      <a href="#abertura" data-cor="vd">Início</a>
+      <a href="#eua" data-cor="eua">Parte I · EUA</a>
+      <a href="#eua-video" data-cor="eua">Vídeos EUA</a>
+      <a href="#brasil" data-cor="br">Parte II · Brasil</a>
+      <a href="#br-video" data-cor="br">Vídeos Brasil</a>
+      <a href="#ponte" data-cor="vd">Parte III · Ponte</a>
+      <a href="#revisao" data-cor="vd">Revisão</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ============================ CAPA ============================ -->
+<section id="abertura" class="capa">
+  <div class="faixa">
+    <div class="capa-selo">Aula completa · Colégio · Volume 4 · Cap. 2 (p. 24) e Caps. 4–5–6 (p. 90)</div>
+    <h1>O século XIX em <em>dois mundos</em></h1>
+    <p class="sub">Enquanto os Estados Unidos marchavam para o Oeste e se dilaceravam numa guerra civil, o Brasil montava um império escravista de café. As duas histórias se cruzam mais do que parece.</p>
+
+    <dl class="capa-linha">
+      <div class="capa-item">
+        <dt>Parte I</dt>
+        <dd>EUA no século XIX — expansão, Destino Manifesto, Guerra de Secessão, segregação e imperialismo (1803–1904)</dd>
+      </div>
+      <div class="capa-item">
+        <dt>Parte II</dt>
+        <dd>Brasil, 2º Reinado — política interna, economia cafeeira, fim do tráfico e política externa (1840–1889)</dd>
+      </div>
+      <div class="capa-item">
+        <dt>Parte III</dt>
+        <dd>A ponte entre os dois: linha do tempo cruzada, comparações e o que os vestibulares fazem com isso</dd>
+      </div>
+    </dl>
+
+    <div class="aviso-capa">
+      <strong>Como este material foi montado.</strong> Todo o conteúdo dos dois conjuntos de slides foi transcrito e explicado — inclusive tabelas, gráficos, mapas, charges e legendas que não estão no texto principal dos slides. Sempre que algo foi acrescentado de fora, está marcado como <em>“Complemento para melhor compreensão”</em>. Divergências e prováveis erros de digitação dos slides estão sinalizados em vermelho, com a versão consagrada pela historiografia — <strong>nada foi corrigido silenciosamente</strong>.
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PARTE I — EUA ============================ -->
+<section id="eua" class="bloco">
+  <div class="faixa">
+    <div class="parte-cabeca p-eua">
+      <span class="eyebrow">Parte I — Capítulo 2, p. 24, vol. 4</span>
+      <h2>Estados Unidos no século XIX</h2>
+      <p>Da compra da Luisiana ao Corolário Roosevelt: como treze colônias na costa atlântica viraram uma potência continental — e o preço, humano e político, que isso custou.</p>
+    </div>
+
+    <!-- ========== VISÃO GERAL ========== -->
+    <h3><span class="num">Visão geral</span>A lógica que amarra o capítulo inteiro</h3>
+    <p class="abre">Antes de decorar datas, entenda o <strong>encadeamento</strong>. Todo o capítulo dos EUA no século XIX pode ser lido como uma reação em cadeia de cinco elos. Se você guardar essa corrente, cada fato novo encontra sozinho o seu lugar.</p>
+
+    <div class="esquema">1 · PRESSÃO       <b>Imigração maciça + crescimento demográfico</b>
+      │              (o país incha e não cabe mais na costa leste)
+      ▼
+2 · SOLUÇÃO       <b>Expansão territorial para o Oeste</b>
+      │              compra + guerra + diplomacia + Homestead Act (1862)
+      ├──────────► <u>CUSTO: extermínio e remoção dos povos indígenas</u>
+      │
+      ▼
+3 · JUSTIFICATIVA <b>Destino Manifesto</b> (ideologia, 1845)
+      │              "Deus nos destinou a ocupar o continente"
+      ▼
+4 · CONFLITO      <b>Como ocupar? Modelo do Norte ou modelo do Sul?</b>
+      │              Compromisso de Missouri (1820) tenta conciliar → fracassa
+      │              Republicanos (Norte) × Democratas (Sul)
+      ▼
+      <b>Eleição de Lincoln (1860) → Guerra de Secessão (1861–65)</b>
+      │              Vitória da União = projeto industrial + 13ª Emenda
+      ├──────────► <u>CUSTO: KKK, Leis Jim Crow, segregação até os anos 1960</u>
+      ▼
+5 · TRANSBORDAMENTO <b>Imperialismo</b>
+                     A mesma ideologia agora aponta para fora:
+                     Monroe (1823) → Polk → Destino Manifesto → <i>Big Stick</i> (1904)</div>
+
+    <div class="caixa c-chave">
+      <p class="caixa-rot">A frase que resume tudo</p>
+      <p style="margin-bottom:0"><strong>A expansão para dentro (Oeste) e a expansão para fora (Caribe, Pacífico) são o <em>mesmo</em> movimento, com a <em>mesma</em> justificativa ideológica.</strong> A Guerra de Secessão é o parêntese sangrento que decide <em>qual</em> modelo econômico vai comandar esse movimento — e a resposta é: o industrial do Norte.</p>
+    </div>
+
+    <!-- ========== 1. OBSTÁCULOS E ESTÍMULOS ========== -->
+    <h3><span class="num">I.1</span>Os obstáculos e os estímulos</h3>
+    <p>O slide abre com uma dupla: o que <em>empurrava</em> os EUA para o Oeste e o que <em>facilitava</em> essa ida.</p>
+
+    <div class="duo">
+      <div class="duo-lado duo-a">
+        <span class="tag">O que empurrava</span>
+        <h6>Pressão demográfica</h6>
+        <ul>
+          <li><strong>Crescimento demográfico intenso</strong>, movido sobretudo pela <strong>imigração</strong> europeia (irlandeses, alemães, escandinavos).</li>
+          <li>Gente demais para pouca terra na faixa atlântica ⇒ <strong>necessidade de expansão territorial</strong>.</li>
+        </ul>
+      </div>
+      <div class="duo-lado duo-d">
+        <span class="tag">O que facilitava</span>
+        <h6>Estímulo legal</h6>
+        <ul>
+          <li><strong>Lei de Terras — <em>Homestead Act</em>, de 1862</strong>.</li>
+          <li>Dava acesso barato/gratuito a lotes no Oeste para quem os ocupasse e cultivasse.</li>
+          <li>Resultado: predomínio de <strong>pequenas propriedades familiares</strong> e <strong>trabalho livre</strong> nos novos territórios.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="caixa c-atencao">
+      <p class="caixa-rot">Obstáculo ≠ empecilho geográfico</p>
+      <p style="margin-bottom:0">Quando o slide diz <em>“Os obstáculos”</em>, ele está falando dos <strong>povos indígenas</strong> — vistos pela ótica expansionista da época como o obstáculo a ser removido. É por isso que, logo abaixo do título, aparece o dado do extermínio. Não confunda com “obstáculos naturais” (montanhas, desertos).</p>
+    </div>
+
+    <div class="caixa c-chave">
+      <p class="caixa-rot">O dado do slide</p>
+      <p style="margin-bottom:0">Em <span class="ano">1890</span> <strong>não sobravam mais de 250.000 indivíduos</strong>: <strong>80% da população original</strong> — cerca de <strong>1 milhão de pessoas</strong> — <strong>foi simplesmente exterminada</strong>.</p>
+    </div>
+
+    <div class="caixa c-comp">
+      <p class="caixa-rot">Complemento para melhor compreensão</p>
+      <p style="margin-bottom:0">O ano de <span class="ano">1890</span> não é aleatório: é o ano do <strong>massacre de Wounded Knee</strong> e o ano em que o <em>censo</em> norte-americano declarou oficialmente <strong>encerrada a “fronteira”</strong> (<em>frontier</em>) — não havia mais linha contínua de terra “livre” a conquistar. É o marco simbólico do fim da Marcha para o Oeste — e, por isso mesmo, o momento em que a expansão precisa transbordar para <strong>fora</strong> das fronteiras (item I.7 desta aula). O extermínio se deu por três vias combinadas: guerras, remoção forçada e <strong>doenças</strong> (varíola, sarampo), esta última responsável pela maior parte das mortes.</p>
+    </div>
+
+    <!-- ========== 2. COMO O TERRITÓRIO FOI MONTADO ========== -->
+    <h3><span class="num">I.2</span>A Conquista do Oeste: como o mapa foi montado, peça por peça</h3>
+    <p>O mapa do slide desmonta os EUA em blocos, cada um adquirido de um jeito. Esta é, de longe, a informação mais cobrada em prova de mapa. Guarde os <strong>três métodos</strong>: <strong>compra</strong>, <strong>guerra</strong> e <strong>diplomacia</strong>.</p>
+
+    <div class="tab-env">
+      <table>
+        <caption>Territórios conquistados e seus preços — segundo o mapa e a lista do slide</caption>
+        <thead>
+          <tr><th>Território</th><th>Ano</th><th>De quem</th><th>Método</th><th>Preço (conforme o slide)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>As antigas Treze Colônias</td><td class="num">—</td><td>Grã-Bretanha</td><td>Independência</td><td>—</td></tr>
+          <tr><td>Território a oeste dos Apalaches</td><td class="num">1783</td><td>Grã-Bretanha</td><td>Tratado de paz (guerra de Independência)</td><td>—</td></tr>
+          <tr class="destaca-a"><td><strong>Luisiana</strong></td><td class="num">1803</td><td>França (Napoleão)</td><td><strong>Compra</strong></td><td>US$ 5 milhões <span style="color:var(--carmim)">(ver alerta)</span></td></tr>
+          <tr><td><strong>Flórida</strong></td><td class="num">1819</td><td>Espanha</td><td><strong>Compra</strong> (Tratado Adams-Onís)</td><td>US$ 15 milhões <span style="color:var(--carmim)">(ver alerta)</span></td></tr>
+          <tr><td><strong>Texas</strong></td><td class="num">1845</td><td>México</td><td><strong>Anexação</strong> (após independência do Texas)</td><td>—</td></tr>
+          <tr><td><strong>Oregon</strong></td><td class="num">1846</td><td>Grã-Bretanha</td><td><strong>Diplomacia</strong> (acordo, sem guerra)</td><td>Acordo diplomático</td></tr>
+          <tr class="destaca-a"><td><strong>Califórnia e Novo México</strong></td><td class="num">1848</td><td>México</td><td><strong>Guerra</strong> (Guerra Mexicano-Americana)</td><td>Mais da metade do território mexicano</td></tr>
+          <tr><td>Faixa sul do Arizona/Novo México</td><td class="num">1853</td><td>México</td><td>Compra (<em>Gadsden</em>)</td><td>—</td></tr>
+          <tr><td><strong>Alasca</strong></td><td class="num">1867</td><td>Rússia</td><td><strong>Compra</strong></td><td>US$ 7,2 milhões</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="caixa c-fonte">Fonte: mapa “Expansão territorial americana” e lista “Territórios conquistados e seus preços”, slide 2 do material do capítulo 2.</p>
+
+    <div class="caixa c-atencao">
+      <p class="caixa-rot">Atenção — dois pontos a conferir no slide</p>
+      <p><strong>1) Os valores da Luisiana e da Flórida parecem trocados.</strong> A lista do slide traz “Luisiana – 5 milhões (1803)” e “Flórida – 15 milhões (1819)”. A historiografia consolidada registra o <strong>inverso</strong>: a <strong>Compra da Luisiana custou US$ 15 milhões</strong> (a negociação começou com uma oferta de US$ 10 milhões só por Nova Orleans; por mais US$ 5 milhões, os franceses venderam <em>todo</em> o território — daí a confusão com o número 5), e a <strong>Flórida saiu por cerca de US$ 5 milhões</strong>, na forma de assunção, pelos EUA, de indenizações devidas por Madri a cidadãos norte-americanos. Se a sua prova cobrar valores, use <strong>Luisiana = 15 milhões</strong> e <strong>Flórida = 5 milhões</strong>. O Alasca (US$ 7,2 milhões, 1867) está correto no slide.</p>
+      <p><strong>2) O Oregon: 1846, não 1848.</strong> O texto corrido do slide diz “Oregon (adquirido mediante negociações com a Inglaterra)” e, em um ponto, “1848”; o mapa do mesmo material traz <strong>1846</strong>, que é a data do <em>Tratado do Oregon</em>. Fique com <strong>1846</strong>.</p>
+      <p style="margin-bottom:0"><strong>3) “Tratado de Versalhes em 1783”.</strong> O mapa nomeia assim o tratado que encerrou a Independência dos EUA. O nome consagrado é <strong>Tratado de Paris (1783)</strong> — a confusão existe porque os acordos paralelos da mesma paz, com França e Espanha, foram assinados em <strong>Versalhes</strong>. Em prova, escreva <em>Tratado de Paris</em>.</p>
+    </div>
+
+    <div class="esquema">TRÊS MÉTODOS DE EXPANSÃO — decore assim
+
+   <i>COMPRA</i>          <u>GUERRA</u>            <s>DIPLOMACIA</s>
+   ────────          ─────────           ──────────
+   Luisiana 1803     México 1846-48      Oregon 1846
+   Flórida 1819      (Califórnia,        (negociado com
+   Gadsden 1853       Novo México,        a Grã-Bretanha,
+   Alasca 1867        Arizona, Utah,      sem tiro)
+                      Nevada, Colorado)
+
+   Texas 1845 = caso híbrido: colonos norte-americanos declaram
+   independência do México (1836) e depois pedem <b>anexação</b> (1845).
+   A anexação do Texas é o <b>estopim</b> da guerra com o México.</div>
+
+    <div class="caixa c-comp">
+      <p class="caixa-rot">Complemento para melhor compreensão — a frase clássica</p>
+      <p style="margin-bottom:0">A guerra de 1846–48 é resumida na frase atribuída ao ditador mexicano Porfirio Díaz: <em>“Pobre México, tão longe de Deus e tão perto dos Estados Unidos.”</em> O tratado que a encerrou (Guadalupe Hidalgo, 1848) transferiu aos EUA cerca de <strong>metade do território mexicano</strong>. E há uma coincidência decisiva: <strong>ouro foi descoberto na Califórnia em 1848</strong>, semanas depois da assinatura — a <em>corrida do ouro</em> de 1849 acelerou brutalmente a ocupação do Pacífico.</p>
+    </div>
+
+    <!-- ========== 3. DESTINO MANIFESTO ========== -->
+    <h3><span class="num">I.3</span>O “Destino Manifesto”: a ideologia que justifica tudo</h3>
+
+    <div class="def">
+      <div class="def-termo">Destino Manifesto</div>
+      <div class="def-corpo">
+        <p style="margin-bottom:0">Ideologia segundo a qual os norte-americanos teriam sido <strong>predestinados pela Providência</strong> a ocupar e “civilizar” o continente. Não é uma lei nem um tratado: é um <strong>discurso de legitimação</strong>. Sua função é transformar conquista em <em>missão</em>, e violência em <em>dever</em>.</p>
+      </div>
+    </div>
+
+    <p>O slide traz a <strong>certidão de nascimento</strong> da expressão. Ela aparece pela primeira vez em um artigo do jornalista <strong>John O’Sullivan</strong>, publicado na revista <em>Democratic Review</em>, de Nova York, em <span class="ano">1845</span>:</p>
+
+    <div class="caixa c-chave">
+      <p class="caixa-rot">O texto de O’Sullivan (1845) — no slide</p>
+      <p style="margin-bottom:0">“O cumprimento de nosso destino manifesto é estender-nos por todo o continente que nos foi confiado pela Providência, para o desenvolvimento da grande experiência de liberdade e autogoverno. É um direito como a que uma árvore tem de obter o ar e a terra…”</p>
+    </div>
+
+    <p>Note a <strong>estratégia retórica</strong>: a expansão é comparada a um processo <em>natural</em> — uma árvore crescendo. Se é natureza, não é escolha política; se não é escolha, não há culpa. Esse é o truque ideológico central, e é exatamente o que as bancas pedem que você identifique.</p>
+
+    <h4>A pintura que virou a imagem oficial da ideia</h4>
+    <p>O material reproduz duas obras. A primeira é <strong><em>Progresso Americano</em> (1872), de John Gast</strong>, descrita no próprio slide como “uma representação alegórica do Destino Manifesto”.</p>
+
+    <div class="caixa c-comp">
+      <p class="caixa-rot">Complemento para melhor compreensão — como “ler” o quadro de Gast</p>
+      <ul class="limpa" style="margin-bottom:0">
+        <li>Uma figura feminina gigante (a <strong>Columbia</strong>, personificação dos EUA) avança da <strong>direita para a esquerda</strong>, isto é, do Leste para o Oeste.</li>
+        <li>Ela leva um <strong>livro escolar</strong> e estende um <strong>fio de telégrafo</strong>: a conquista é apresentada como levar <em>instrução</em> e <em>progresso técnico</em>.</li>
+        <li>Atrás dela, o céu é <strong>claro</strong> — cidades, trens, arados. À frente, o céu é <strong>escuro</strong> — e ali fogem <strong>indígenas, bisões e animais selvagens</strong>.</li>
+        <li>A leitura ideológica é explícita: <strong>luz = civilização; sombra = barbárie</strong>; a passagem de uma à outra é “natural” e inevitável.</li>
+      </ul>
+    </div>
+
+    <p>A segunda obra é o afresco <strong><em>Westward the Course of Empire Takes Its Way</em>, de Emanuel Leutze</strong>, pintado nas paredes do <strong>Capitólio</strong> — ou seja, a ideologia não estava só em jornal: estava na parede do Congresso.</p>
+
+    <h4>O Destino Manifesto sobrevive ao século XIX</h4>
+    <p>Esta é a parte do material que mais surpreende — e que mais rende questão contemporânea. O slide reúne discursos presidenciais que reciclam a mesma ideia, mais de um século depois:</p>
+
+    <div class="tab-env">
+      <table>
+        <caption>Ecos do Destino Manifesto em discursos presidenciais (conforme os slides)</caption>
+        <thead><tr><th>Presidente / ocasião</th><th>Ano</th><th>Ideia central do trecho</th></tr></thead>
+        <tbody>
+          <tr><td>Ronald Reagan — Discurso de Posse</td><td class="num">1981</td><td>“Nós, os americanos, temos um encontro marcado com o <strong>destino</strong>”; nenhum povo teria lutado mais nem feito mais para avançar a dignidade humana.</td></tr>
+          <tr><td>Ronald Reagan — Discurso ao Parlamento Britânico</td><td class="num">1982</td><td>Os EUA alcançariam seu destino de ser “<strong>uma cidade brilhante sobre uma colina</strong> para toda a humanidade ver”.</td></tr>
+          <tr><td>Ronald Reagan — Discurso de Despedida</td><td class="num">1989</td><td>A tarefa dada aos americanos seria “mover a consciência do mundo”; se falharem, “não haverá lugar para os oprimidos do mundo fugirem”.</td></tr>
+          <tr><td>Barack Obama — Discurso de Posse</td><td class="num">2009</td><td>“Nós somos os <strong>guardiões desse legado</strong>”; guiados por esses princípios, os EUA enfrentariam novas ameaças com resposta “forte, sábia e justa”.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="caixa c-comp">
+      <p class="caixa-rot">Complemento para melhor compreensão</p>
+      <p style="margin-bottom:0">A imagem da <strong>“cidade sobre uma colina”</strong> (<em>city upon a hill</em>) não é invenção de Reagan: vem do sermão do puritano <strong>John Winthrop, em 1630</strong>, a bordo do navio que trazia os colonos a Massachusetts, e é ela própria uma citação do Evangelho de Mateus. Isso mostra a profundidade da raiz: <strong>Puritanismo (séc. XVII) → Destino Manifesto (séc. XIX) → excepcionalismo americano (séc. XX–XXI)</strong>. É a <em>mesma</em> autoimagem de povo eleito, reciclada a cada século. Guardar essa linha é ouro em questão dissertativa.</p>
+    </div>
+
+    <!-- ========== 4. GENOCÍDIO INDÍGENA ========== -->
+    <h3><span class="num">I.4</span>O custo humano: remoção, extermínio e o mito do <em>Far West</em></h3>
+    <p>O slide organiza o custo da expansão em uma sequência lógica muito clara:</p>
+
+    <div class="fluxo">
+      <div class="fluxo-passo" data-cor="cm"><span class="p-num">Elo 01</span><b>Conquista</b>Novos territórios entram no domínio dos EUA.</div>
+      <div class="fluxo-passo" data-cor="cm"><span class="p-num">Elo 02</span><b>“Desocupação”</b>Para ocupar com colonos, é preciso primeiro esvaziar.</div>
+      <div class="fluxo-passo" data-cor="cm"><span class="p-num">Elo 03</span><b>Expulsão e deslocamento forçado</b>A via legal: leis de remoção.</div>
+      <div class="fluxo-passo" data-cor="cm"><span class="p-num">Elo 04</span><b>Extermínio via guerras</b>A via militar, quando a remoção encontra resistência.</div>
+    </div>
+
+    <h4>A Lei de Remoção dos Índios (1830) e a Trilha das Lágrimas</h4>
+    <p>Em <span class="ano">1830</span>, o presidente <strong>Andrew Jackson</strong> promulgou a chamada <strong>“Lei de Remoção dos Índios”</strong> (<em>Indian Removal Act</em>). Por ela, criava-se uma grande reserva indígena na região que hoje corresponde ao estado de <strong>Oklahoma</strong>.</p>
+    <p>Nas palavras do próprio material: <em>“do dia para a noite, milhares de homens e mulheres, das mais diferentes idades e culturas, se viram obrigados a realizar um deslocamento de mais de <strong>1.500 quilômetros</strong>, rumo a um futuro completamente incerto”</em>. Esse deslocamento ficou conhecido como <strong>Trilha das Lágrimas</strong> (<em>Trail of Tears</em>).</p>
+
+    <div class="caixa c-comp">
+      <p class="caixa-rot">Complemento para melhor compreensão</p>
+      <p style="margin-bottom:0">O caso mais documentado é o dos <strong>Cherokee</strong>, removidos da Geórgia em 1838–39; milhares morreram no caminho, de fome, frio e doença. Detalhe que as bancas adoram: os Cherokee <strong>venceram na Suprema Corte</strong> (caso <em>Worcester v. Georgia</em>, 1832), que reconheceu seus direitos territoriais — e o governo Jackson <strong>simplesmente ignorou a decisão</strong>. Ou seja: a remoção foi feita <em>contra</em> a própria ordem jurídica interna dos EUA. Isso desmonta qualquer leitura de que a expansão foi “legal e ordeira”.</p>
+    </div>
+
+    <h4>O mito do <em>Far West</em></h4>
+    <p>O último elo é o <strong>cultural</strong>, e é o mais sofisticado do capítulo. Segundo o slide, primeiro pela <strong>literatura</strong> e depois pelo <strong>cinema</strong>, constrói-se “uma estória épica sobre a conquista do Oeste, como expressão da <strong>valentia</strong>, do <strong>empreendedorismo</strong> e do <strong>heroísmo dos pioneiros</strong>, uma espécie de <strong>síntese da alma e da identidade norte-americana</strong>”.</p>
+
+    <div class="caixa c-chave">
+      <p class="caixa-rot">Por que isso importa</p>
+      <p style="margin-bottom:0">O <strong>western</strong> não é entretenimento neutro: ele é o <strong>Destino Manifesto contado como aventura</strong>. Ao transformar o colono em herói e o indígena em ameaça, o gênero <em>naturaliza</em> retroativamente o extermínio. Quando um vestibular apresenta um cartaz de faroeste e pergunta o que ele “constrói”, a resposta esperada é exatamente esta: <strong>uma identidade nacional que apaga a violência da conquista</strong>.</p>
+    </div>
+
+    <!-- ========== 5. O PROBLEMA DA OCUPAÇÃO ========== -->
+    <h3><span class="num">I.5</span>A Conquista do Oeste e os problemas: qual modelo levar para lá?</h3>
+    <p class="abre">Aqui está o <strong>coração do capítulo</strong>. Conquistar terra é fácil; o difícil é decidir <em>que tipo de sociedade</em> se instala nela. E os EUA tinham dois modelos incompatíveis dentro do mesmo país.</p>
+
+    <div class="duo">
+      <div class="duo-lado duo-a">
+        <span class="tag">Modelo nortista</span>
+        <h6>Norte</h6>
+        <ul>
+          <li><strong>Pequenas propriedades</strong></li>
+          <li><strong>Policultura</strong></li>
+          <li><strong>Trabalho livre</strong> (assalariado)</li>
+          <li>Vocação <strong>industrial</strong> e <strong>protecionista</strong></li>
+          <li>Representação política: <strong>Partido Republicano</strong>, ligado aos interesses da <strong>burguesia nortista</strong></li>
+        </ul>
+      </div>
+      <div class="duo-lado duo-b">
+        <span class="tag">Modelo sulista</span>
+        <h6>Sul</h6>
+        <ul>
+          <li><strong>Grandes propriedades</strong> (<em>plantation</em>)</li>
+          <li>Monocultura de exportação (algodão)</li>
+          <li><strong>Trabalho escravo</strong></li>
+          <li>Vocação <strong>agroexportadora</strong> e <strong>livre-cambista</strong></li>
+          <li>Representação política: <strong>Partido Democrata</strong>, ligado aos interesses agroexportadores da <strong>elite escravista do Sul</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="caixa c-chave">
+      <p class="caixa-rot">O que o slide faz questão de dizer</p>
+      <p style="margin-bottom:0">“Por trás dessas divergências, <strong>se escondia uma disputa política por hegemonia</strong>” entre os dois partidos. Ou seja: a briga sobre a escravidão nos novos territórios <strong>não era (só) moral — era aritmética política</strong>. Cada novo estado admitido na federação levava consigo <strong>dois senadores</strong>. Quem ganhasse a corrida pelo Oeste ganharia a maioria no Congresso e imporia sua agenda econômica ao país inteiro.</p>
+    </div>
+
+    <h4>A tentativa de conciliação: o Compromisso de Missouri (1820)</h4>
+    <p>Em <span class="ano">1820</span> criou-se o <strong>“Compromisso de Missouri”</strong>: uma linha geográfica dividindo o país. Ao <strong>sul</strong> da linha, a escravidão era <strong>permitida</strong>; ao <strong>norte</strong> dela, <strong>proibida</strong>.</p>
+
+    <div class="caixa c-atencao">
+      <p class="caixa-rot">Detalhe do paralelo — o slide se contradiz</p>
+      <p style="margin-bottom:0">O texto do slide fala em <strong>“paralelo 36”</strong>, mas o <strong>mapa do próprio slide</strong> indica <strong>36°30′</strong>, que é o valor correto e o que as bancas cobram. Escreva sempre <strong>36°30′ de latitude norte</strong>.</p>
+    </div>
+
+    <div class="esquema">O COMPROMISSO DE MISSOURI (1820) — o mapa do slide
+
+  ┌──────────────────────────────────────────────┐
+  │  Oregon (aberto a GB e EUA)  │  Inglês       │  45°
+  ├──────────────────────────────┼───────────────┤
+  │                              │               │
+  │   <i>TERRITÓRIO FECHADO</i>          │ <i>12 ESTADOS NÃO</i>  │
+  │   <i>À ESCRAVIDÃO</i>                │ <i>ESCRAVISTAS</i>     │
+  │                              │               │
+  ══════════════════════════════════════════════════ 36°30'
+  │                              │               │
+  │   Espanhol                   │ <u>12 ESTADOS</u>     │  30°
+  │                              │ <u>ESCRAVISTAS</u>    │
+  └──────────────────────────────┴───────────────┘
+       ■ = territórios abertos à escravidão
+
+  EQUILÍBRIO BUSCADO: 12 estados livres × 12 estados escravistas
+  → o Senado ficava empatado → nenhum lado impunha sua agenda</div>
+
+    <h4>Por que o acordo desmoronou</h4>
+    <p>O slide dá a explicação <strong>socioeconômica</strong>, e ela é excelente. Não foi um debate moral que quebrou o Compromisso — foi a <strong>composição dos colonos</strong>:</p>
+
+    <div class="fluxo">
+      <div class="fluxo-passo"><span class="p-num">Passo 01</span><b>Quem foi para o Oeste</b>Predominância de <strong>imigrantes sem recursos</strong> — gente que não tinha capital para comprar escravizados.</div>
+      <div class="fluxo-passo"><span class="p-num">Passo 02</span><b>As “facilidades” de acesso</b>O <strong>Homestead Act</strong> e leis semelhantes davam terra barata a quem a ocupasse.</div>
+      <div class="fluxo-passo"><span class="p-num">Passo 03</span><b>O resultado no chão</b>Predomínio de <strong>pequenas propriedades familiares</strong> e de <strong>trabalho livre</strong>.</div>
+      <div class="fluxo-passo" data-cor="cm"><span class="p-num">Passo 04</span><b>A ruptura</b>Surgem estados que <strong>rompem o acordo de 1820</strong> e ganham autonomia para decidir sozinhos sobre a escravidão.</div>
+      <div class="fluxo-passo" data-cor="cm"><span class="p-num">Passo 05</span><b>A consequência política</b><strong>Crescimento do Partido Republicano</strong> e aumento do risco de ele impor sua <strong>agenda industrial a todo o país</strong>.</div>
+    </div>
+
+    <div class="caixa c-comp">
+      <p class="caixa-rot">Complemento para melhor compreensão</p>
+      <p style="margin-bottom:0">O mecanismo jurídico que substituiu a linha de 1820 chamava-se <strong>soberania popular</strong> (<em>popular sovereignty</em>): consagrado na <strong>Lei Kansas-Nebraska (1854)</strong>, ele revogava o Compromisso de Missouri e deixava que <strong>os próprios colonos de cada território votassem</strong> se queriam ou não escravidão. O resultado foi previsível — colonos escravistas e antiescravistas correram para o Kansas e começaram a se matar, episódio apelidado de <em>“Bleeding Kansas”</em> (Kansas Sangrento). É o ensaio da guerra civil que viria em 1861. <strong>O Partido Republicano nasce em 1854</strong>, justamente como reação a essa lei.</p>
+    </div>
+
+    <!-- ========== 6. GUERRA DE SECESSÃO ========== -->
+    <h3><span class="num">I.6</span>A eleição de Lincoln e a Guerra de Secessão (1861–1865)</h3>
+
+    <div class="caixa c-atencao">
+      <p class="caixa-rot">Datas — o slide traz “1860/1865”</p>
+      <p style="margin-bottom:0">O material indica <em>“Guerra de Secessão 1860/1865”</em>. O <span class="ano">1860</span> é o ano da <strong>eleição</strong> de Lincoln (novembro). A guerra em si começa em <strong>abril de 1861</strong>, com o ataque confederado ao <strong>Forte Sumter</strong>, e termina em <strong>1865</strong>. Em prova, escreva <strong>1861–1865</strong>.</p>
+    </div>
+
+    <h4>Os motivos, segundo o slide</h4>
+    <p>O material lista os <strong>motivos</strong> a partir do <strong>projeto industrial dos estados do Norte</strong>, encampado pelo <strong>Partido Republicano</strong>:</p>
+    <ul class="limpa">
+      <li><strong>Defesa de uma política protecionista</strong> — aumento das tarifas alfandegárias, válidas para <strong>toda a federação</strong>.</li>
+      <li><strong>Tendência a apoiar grupos e ideais abolicionistas</strong> em relação à escravidão sulista.</li>
+      <li><strong>Eleição de Abraham Lincoln</strong>, candidato pelo Partido Republicano.</li>
+    </ul>
+
+    <div class="caixa c-chave">
+      <p class="caixa-rot">A hierarquia das causas — leia com cuidado</p>
+      <p style="margin-bottom:0">O material coloca o <strong>protecionismo em primeiro lugar</strong> e o abolicionismo como algo que “entraria como <em>mais um elemento</em> dentro dessa lógica”. Isso é uma <strong>escolha interpretativa deliberada</strong>: a linha adotada aqui privilegia a <strong>disputa econômica</strong> (tarifas, mercado interno, industrialização) sobre a <strong>questão moral</strong> da escravidão. É essa a leitura que o gabarito da questão discursiva do próprio material cobra. Guarde bem — e veja a nuance na caixa de pegadinhas.</p>
+    </div>
+
+    <h4>Yankees × Confederados</h4>
+    <div class="duo">
+      <div class="duo-lado duo-a">
+        <span class="tag">União · Yankees</span>
+        <h6>Norte</h6>
+        <ul>
+          <li>Quer o <strong>protecionismo</strong> para proteger sua indústria nascente.</li>
+          <li>Quer o <strong>mercado interno ampliado</strong> pelas imigrações.</li>
+          <li>Presidente: <strong>Abraham Lincoln</strong> (Republicano).</li>
+        </ul>
+      </div>
+      <div class="duo-lado duo-b">
+        <span class="tag">Confederação</span>
+        <h6>Sul</h6>
+        <ul>
+          <li>Quer <strong>preservar suas exportações</strong> de gêneros primários para a <strong>Inglaterra</strong>.</li>
+          <li><strong>Não quer incomodar a Inglaterra</strong> com tarifas de importação (livre-cambismo).</li>
+          <li>Teme qualquer questionamento sério à <strong>escravidão</strong>.</li>
+          <li>Rompe com a União ⇒ <strong>secessão</strong>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="def">
+      <div class="def-termo">Secessão</div>
+      <div class="def-corpo"><p style="margin-bottom:0">Ato de <strong>separar-se</strong> de um Estado do qual se fazia parte. “Guerra de Secessão” é, portanto, literalmente <strong>a guerra da separação</strong>: os estados do Sul se declaram independentes da União e formam os <strong>Estados Confederados da América</strong>.</p></div>
+    </div>
+
+    <h4>O desfecho</h4>
+    <div class="fluxo">
+      <div class="fluxo-passo"><span class="p-num">Resultado 01</span><b>Vitória dos exércitos da União</b>O Norte vence militarmente.</div>
+      <div class="fluxo-passo"><span class="p-num">Resultado 02</span><b>Imposição do projeto industrial</b>O modelo nortista passa a comandar a economia de todo o país.</div>
+      <div class="fluxo-passo"><span class="p-num">Resultado 03</span><b>Abolição da escravidão</b>Consagrada na <strong>13ª Emenda</strong> à Constituição.</div>
+    </div>
+
+    <div class="caixa c-comp">
+      <p class="caixa-rot">Complemento para melhor compreensão — a diferença entre Proclamação e Emenda</p>
+      <p style="margin-bottom:0">Confusão clássica de vestibular. A <strong>Proclamação de Emancipação (1863)</strong> foi um <em>ato de guerra</em> de Lincoln: declarava livres os escravizados <strong>apenas nos estados em rebelião</strong> — uma medida estratégica para desorganizar a economia inimiga e atrair recrutas negros. Já a <strong>13ª Emenda (1865)</strong> é que <strong>aboliu a escravidão em todo o território</strong> dos EUA, de forma constitucional e definitiva. Se a alternativa disser que “Lincoln aboliu a escravidão em 1863”, ela está errada.</p>
+    </div>
+
+    <!-- ========== 7. POS-GUERRA E SEGREGAÇÃO ========== -->
+    <h3><span class="num">I.7</span>O que vem depois da abolição: KKK, Jim Crow e a segregação legal</h3>
+    <p class="abre">Aqui o material é especialmente exigente — e é onde os vestibulares mais concorridos gostam de bater, porque exige entender que <strong>abolir não é igualar</strong>.</p>
+
+    <p>Segundo o slide, a <strong>aristocracia rural sulista tenta preservar sua hegemonia política através do terror e da violência</strong>, via criação da <strong>Ku Klux Klan</strong>. O mecanismo é descrito com precisão:</p>
+
+    <div class="esquema">O CIRCUITO DA SEGREGAÇÃO — como a derrota militar vira vitória social
+
+  Derrota do Sul na guerra (1865)
+        │
+        ▼
+  <u>Terror e violência</u> (Ku Klux Klan)
+        │
+        ▼
+  <b>Constrange e impede a participação eleitoral da maioria negra</b>
+        │
+        ▼
+  Sem eleitorado negro, os brancos sulistas controlam
+  as assembleias estaduais do Sul
+        │
+        ▼
+  <b>Criação de uma série de leis segregacionistas</b> (Leis Jim Crow)
+        │
+        ▼
+  Só eliminadas nos <i>anos 1960</i> do século XX, com a
+  luta pelos direitos civis conduzida por <i>Martin Luther King</i></div>
+
+    <h4>As Leis Jim Crow</h4>
+    <p>O slide define: as <strong>Leis Jim Crow</strong> levaram à <strong>legalização do racismo antinegro e da segregação racial</strong> nos Estados Unidos, de <span class="ano">1877</span> até <strong>meados dos anos 1960</strong>.</p>
+
+    <div class="caixa c-chave">
+      <p class="caixa-rot">De onde vem o nome “Jim Crow” — está no slide</p>
+      <p style="margin-bottom:0">O nome originou-se de um <strong>personagem de performances racistas</strong> do ator branco <strong>Thomas Dartmouth Rice (1808–1860)</strong>, por volta de <span class="ano">1832</span>. Conhecido como <strong>“Daddy” Rice</strong>, ele usava <strong><em>blackface</em></strong> (pintava o rosto de preto) em seus espetáculos, nos quais cantava e dançava interpretando <strong>estereótipos de um escravizado afro-americano idoso</strong>. A palavra inglesa <em>crow</em> significa <strong>corvo</strong>, em alusão à cor escura.</p>
+    </div>
+
+    <p>O material ilustra o cotidiano dessa segregação com duas fotografias:</p>
+    <ul class="limpa">
+      <li>Uma <strong>estação de ônibus em Durham, Carolina do Norte, em 1940</strong>, com entradas e áreas separadas.</li>
+      <li>Um <strong>homem afro-americano bebendo de um bebedouro marcado como “colorido”</strong>, em um terminal de bondes em <strong>Oklahoma City, em 1939</strong>.</li>
+    </ul>
+
+    <div class="caixa c-comp">
+      <p class="caixa-rot">Complemento para melhor compreensão — a doutrina que sustentou tudo</p>
+      <p style="margin-bottom:0">A base jurídica das Jim Crow foi a decisão da Suprema Corte em <strong><em>Plessy v. Ferguson</em> (1896)</strong>, que criou a doutrina <strong>“separados, mas iguais”</strong> (<em>separate but equal</em>): a segregação seria constitucional desde que as instalações fossem “equivalentes”. Na prática, nunca eram. Essa doutrina só caiu em <strong><em>Brown v. Board of Education</em> (1954)</strong>, e a segregação legal só foi desmontada com o <strong>Civil Rights Act (1964)</strong> e o <strong>Voting Rights Act (1965)</strong> — exatamente os “anos 60” a que o slide se refere.</p>
+    </div>
+
+    <h4>Os ecos contemporâneos</h4>
+    <p>O material fecha o bloco puxando o fio até o presente, com duas imagens datadas: um evento com <strong>bandeira ligada à supremacia branca</strong> em <span class="ano">2017</span> e a <strong>invasão do Capitólio</strong> em <span class="ano">2021</span>.</p>
+    <div class="caixa c-chave">
+      <p class="caixa-rot">Por que o slide faz isso</p>
+      <p style="margin-bottom:0">Para mostrar que o racismo estrutural norte-americano <strong>não terminou com a lei</strong>. A bandeira confederada continua sendo hasteada por grupos supremacistas — ou seja, o símbolo da derrota de 1865 permanece vivo como <strong>bandeira política</strong>. É o tipo de conexão passado–presente que o ENEM e as bancas de humanas exploram diretamente.</p>
+    </div>
+
+    <!-- ========== 8. IMPERIALISMO E DOUTRINAS ========== -->
+    <h3><span class="num">I.8</span>Os EUA no pós-guerra: as quatro doutrinas e o imperialismo</h3>
+    <p class="abre">Terminada a guerra civil e unificado o mercado interno sob o projeto industrial, os EUA vivem <strong>intenso desenvolvimento industrial</strong> — e começam um <strong>imperialismo regional</strong>. A expansão agora aponta para fora.</p>
+
+    <div class="tab-env">
+      <table>
+        <caption>As doutrinas norte-americanas — conforme o slide</caption>
+        <thead><tr><th>Doutrina</th><th>Ano (slide)</th><th>Conteúdo essencial</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Doutrina Monroe</strong></td><td class="num">1823</td><td>“A América para os americanos”. Veta a recolonização europeia no continente.</td></tr>
+          <tr><td><strong>Doutrina Polk</strong></td><td class="num">1848</td><td>Reforça e amplia Monroe, associando-a à expansão territorial. Polk é o presidente das aquisições de Oregon, Texas, Novo México e Califórnia.</td></tr>
+          <tr><td><strong>Doutrina do Destino Manifesto</strong></td><td class="num">1860</td><td>A justificativa ideológica da expansão (ver alerta abaixo sobre a data).</td></tr>
+          <tr class="destaca-a"><td><strong>Doutrina do <em>Big Stick</em></strong> (ou <strong>Corolário Roosevelt</strong>)</td><td class="num">1900</td><td>Os EUA se atribuem um <strong>poder de polícia internacional</strong> no continente. “Ajuda” na independência do <strong>Panamá</strong> e criação do <strong>canal em 1904</strong>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="caixa c-atencao">
+      <p class="caixa-rot">Atenção às datas deste quadro</p>
+      <p><strong>Destino Manifesto — 1860?</strong> O próprio material, em outro slide, informa que a expressão surge em <strong>1845</strong>, no artigo de O’Sullivan. Use <strong>1845</strong>. A data de 1860 no quadro provavelmente marca o auge de aplicação da ideia, não sua origem.</p>
+      <p><strong>Doutrina Polk — 1848?</strong> A formulação da doutrina é geralmente datada da <strong>mensagem anual de Polk ao Congresso, em dezembro de 1845</strong>. O slide usa 1848, que corresponde melhor ao <em>fim</em> do mandato e à conclusão das anexações (Polk governou <strong>1845–1849</strong>; o slide indica “1844/48”, referindo-se à eleição de 1844). Se a prova pedir a data, <strong>1845</strong> é a resposta mais segura; se aparecer 1848, entenda como o ciclo de conquistas.</p>
+      <p style="margin-bottom:0"><strong><em>Big Stick</em> — 1900 ou 1904?</strong> Theodore Roosevelt assume a presidência em <strong>1901</strong>; a formulação clássica do <strong>Corolário Roosevelt</strong> está na <strong>Mensagem à Nação de 1904</strong>, que o próprio material transcreve. Use <strong>1904</strong> para o corolário e <strong>1901–1909</strong> para o governo.</p>
+    </div>
+
+    <h4>O Corolário Roosevelt em suas próprias palavras (1904)</h4>
+    <p>O material transcreve o trecho decisivo da <strong>“Mensagem à Nação” de Theodore Roosevelt, de 1904</strong>. Vale ler devagar, porque a estrutura do argumento é uma <strong>armadilha lógica</strong> perfeita:</p>
+
+    <div class="caixa c-chave">
+      <p class="caixa-rot">Trecho transcrito no slide</p>
+      <p>“Se uma nação demonstra que sabe como agir com adequada eficiência e decência em assuntos políticos e sociais, se mantiver a ordem e respeitar suas obrigações, <strong>não precisará temer uma interferência norte-americana</strong>. A injustiça crônica ou a impotência que resultam de um afrouxamento geral das regras de uma sociedade civilizada podem exigir, afinal de contas, na América ou em outro continente, <strong>a intervenção de uma nação civilizada ocidental</strong>, a adesão dos Estados Unidos à Doutrina Monroe poderá vir a forçar os Estados Unidos, <strong>embora contra a sua vontade</strong>, em casos flagrantes de injustiça ou de impotência, a exercer <strong>um poder de polícia internacional</strong>.”</p>
+      <p style="margin-bottom:0" class="caixa c-fonte">Disponível em: www.ourdocuments.gov — acesso em 31 mar. 2014. Citado no slide 9 do material.</p>
+    </div>
+
+    <div class="caixa c-comp">
+      <p class="caixa-rot">Complemento para melhor compreensão — como desmontar o texto</p>
+      <ul class="limpa" style="margin-bottom:0">
+        <li><strong>Quem define “eficiência e decência”?</strong> Os próprios EUA. Logo, eles definem sozinhos quando podem intervir.</li>
+        <li><strong>“Nação civilizada ocidental”</strong> — a intervenção é apresentada como serviço à civilização, não como interesse econômico.</li>
+        <li><strong>“Embora contra a sua vontade”</strong> — o agressor se apresenta como relutante. É o mesmo truque retórico do Destino Manifesto: transformar escolha em <strong>destino inevitável</strong>.</li>
+        <li><strong>“Poder de polícia internacional”</strong> — a expressão-chave. Note a inversão: a <strong>Doutrina Monroe</strong> (1823) era <em>defensiva</em> (“europeus, não voltem”); o <strong>Corolário</strong> (1904) a converte em licença <em>ofensiva</em> para os próprios EUA intervirem. <strong>Monroe protege a América dos europeus; o Corolário entrega a América aos EUA.</strong></li>
+      </ul>
+    </div>
+
+    <h4>Onde os EUA intervieram, na prática</h4>
+    <div class="duo">
+      <div class="duo-lado duo-a">
+        <span class="tag">América Central e Caribe</span>
+        <h6>O quintal</h6>
+        <ul>
+          <li><strong>“Ajuda” na independência de Cuba — 1898.</strong> Prêmios: <strong>Emenda Platt</strong> e a <strong>Base de Guantánamo</strong>.</li>
+          <li><strong>Intervenções em vários países</strong>: Honduras, Nicarágua, entre outros.</li>
+          <li><strong>Panamá</strong>: “ajuda” na independência (1903) e construção do <strong>canal em 1904</strong>.</li>
+        </ul>
+      </div>
+      <div class="duo-lado duo-d">
+        <span class="tag">Pacífico</span>
+        <h6>A projeção oceânica</h6>
+        <ul>
+          <li><strong>Filipinas</strong></li>
+          <li><strong>Havaí</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="def">
+      <div class="def-termo">Emenda Platt (1901)</div>
+      <div class="def-corpo"><p style="margin-bottom:0">Dispositivo <strong>inserido na Constituição cubana</strong> por imposição norte-americana. Dava aos EUA o <strong>direito de intervir militarmente em Cuba</strong> sempre que julgassem necessário e o direito de manter <strong>bases navais</strong> na ilha — origem da base de <strong>Guantánamo</strong>, que os EUA ocupam <strong>até hoje</strong>. É o exemplo mais brutal de “independência tutelada”: Cuba se livra da Espanha e cai sob controle dos EUA.</p></div>
+    </div>
+
+    <div class="caixa c-comp">
+      <p class="caixa-rot">Complemento para melhor compreensão — o slide isolado “Doutrina Monroe”</p>
+      <p style="margin-bottom:0">Um dos slides do material traz apenas o título <strong>“Doutrina Monroe”</strong> — é um marcador de tópico, sem texto. Para não deixar buraco: formulada pelo presidente <strong>James Monroe em 1823</strong>, ela estabelece que (i) a América <strong>não é mais campo de colonização</strong> europeia; (ii) os EUA <strong>não interferem</strong> nos assuntos europeus; (iii) qualquer tentativa europeia de intervir no continente seria vista como <strong>ato hostil</strong>. Sintetizada no slogan <strong>“A América para os americanos”</strong>. A ironia histórica — muito cobrada — é que, no século XX, a frase passa a valer como <strong>“A América para os norte-americanos”</strong>.</p>
+    </div>
+
+    <!-- ========== ESQUEMA-SÍNTESE ========== -->
+    <h3><span class="num">I.9</span>Esquema-síntese dos EUA no século XIX</h3>
+    <div class="esquema">                    <b>ESTADOS UNIDOS · SÉCULO XIX</b>
+
+┌─── EXPANSÃO PARA DENTRO (1803–1890) ────────────────────────┐
+│  <i>Como?</i>  compra · guerra · diplomacia · Homestead Act 1862 │
+│  <i>Por quê?</i> imigração + crescimento demográfico             │
+│  <i>Com que discurso?</i> DESTINO MANIFESTO (O'Sullivan, 1845)   │
+│  <u>Custo:</u> Indian Removal Act 1830 · Trilha das Lágrimas     │
+│         1890: restam ~250 mil indígenas (–80%)               │
+└──────────────────────────┬───────────────────────────────────┘
+                           │
+                  <b>PROBLEMA CENTRAL</b>
+              "que modelo levar ao Oeste?"
+                           │
+        ┌──────────────────┴──────────────────┐
+   <i>NORTE</i>                                <u>SUL</u>
+   pequena propriedade                  plantation
+   policultura                          monocultura
+   trabalho livre                       trabalho escravo
+   protecionismo                        livre-cambismo
+   Partido REPUBLICANO                  Partido DEMOCRATA
+        └──────────────────┬──────────────────┘
+                           │
+     1820 Compromisso de Missouri (36°30') → tentativa
+     1854 Kansas-Nebraska → acordo se rompe
+     1860 <b>Eleição de LINCOLN</b> (Republicano)
+     1861 Secessão → <b>GUERRA CIVIL 1861–1865</b>
+                           │
+                    <s>VITÓRIA DA UNIÃO</s>
+                           │
+        ┌──────────────────┴──────────────────┐
+   projeto INDUSTRIAL              13ª EMENDA (abolição)
+   imposto ao país inteiro                  │
+                                            ▼
+                                  <u>KKK → Jim Crow (1877–1960s)</u>
+                                  → luta por direitos civis
+                                     (Martin Luther King)
+                           │
+┌──────────────────────────┴───────────────────────────────────┐
+│  EXPANSÃO PARA FORA — IMPERIALISMO                           │
+│  Monroe 1823 → Polk 1845 → Destino Manifesto → <b>BIG STICK 1904</b> │
+│  Cuba 1898 (Emenda Platt/Guantánamo) · Panamá 1903/canal 1904│
+│  Filipinas · Havaí · Honduras · Nicarágua                    │
+└──────────────────────────────────────────────────────────────┘</div>
+
+    <!-- ========== PEGADINHAS ========== -->
+    <h3><span class="num">I.10</span>Pontos de atenção e pegadinhas — EUA</h3>
+
+    <div class="caixa c-atencao">
+      <p class="caixa-rot">As oito confusões mais frequentes</p>
+      <ol>
+        <li><strong>Norte × Sul: quem era protecionista?</strong> O <strong>Norte</strong> (indústria nascente precisa de proteção). O <strong>Sul</strong> era <strong>livre-cambista</strong>, porque exportava algodão para a Inglaterra e não queria retaliação. Confundir isso derruba a questão inteira.</li>
+        <li><strong>Republicanos e Democratas de 1860 ≠ os de hoje.</strong> Em 1860, o <strong>Republicano</strong> era o partido do Norte industrial e antiescravista; o <strong>Democrata</strong>, o do Sul agrário e escravista. As posições se inverteram ao longo do século XX. Nunca projete a política atual sobre o século XIX.</li>
+        <li><strong>Lincoln não era abolicionista radical.</strong> O material é preciso: o abolicionismo entra “como <em>mais um elemento</em>” dentro da lógica econômica. A prioridade declarada de Lincoln era <strong>preservar a União</strong>.</li>
+        <li><strong>Proclamação de Emancipação (1863) ≠ 13ª Emenda (1865).</strong> A primeira valia só para os estados rebeldes; a segunda aboliu no país todo.</li>
+        <li><strong>A guerra não “acabou com o racismo”.</strong> Ao contrário: da derrota sulista nascem a <strong>KKK</strong> e as <strong>Jim Crow</strong>, que duram até os anos 1960. Abolição ≠ igualdade.</li>
+        <li><strong>Monroe (1823) ≠ Big Stick (1904).</strong> Monroe é <em>defensivo/anticolonial</em>; o Corolário Roosevelt é <em>intervencionista</em>. A mesma doutrina muda de sinal.</li>
+        <li><strong>Destino Manifesto é ideologia, não lei.</strong> Nunca foi votado nem promulgado. Quem quiser uma <em>lei</em> deve citar o <strong>Homestead Act (1862)</strong> ou o <strong>Indian Removal Act (1830)</strong>.</li>
+        <li><strong>Homestead Act é de 1862 — em plena guerra.</strong> Não é anterior ao conflito: foi aprovado <em>depois</em> que os congressistas sulistas se retiraram do Congresso, o que permitiu ao Norte aprovar sua agenda sem oposição. Esse detalhe é ouro em questão de causa e consequência.</li>
+      </ol>
+    </div>
+
+    <!-- ========== O QUE MAIS CAI ========== -->
+    <h3><span class="num">I.11</span>O que mais cai em prova — EUA</h3>
+    <div class="flash">
+      <div class="flash-c"><b>Campeão absoluto</b>Diferenças <strong>Norte × Sul</strong> como causa da Guerra de Secessão — pedido em questão dissertativa (FUVEST, Unicamp, Unesp) e em múltipla escolha.</div>
+      <div class="flash-c"><b>Muito frequente</b><strong>Destino Manifesto</strong> analisado a partir de uma <strong>imagem</strong> (Gast, Leutze) ou de um <strong>texto</strong> (O’Sullivan). Cobra-se a <em>função ideológica</em>, não a data.</div>
+      <div class="flash-c"><b>Muito frequente</b>Diferença entre <strong>Doutrina Monroe</strong> e <strong>Big Stick</strong>, com o texto de Roosevelt de 1904 como fonte.</div>
+      <div class="flash-c"><b>Crescente (ENEM)</b><strong>Jim Crow, segregação e direitos civis</strong>, geralmente com fotografia de bebedouro/estação segregada.</div>
+      <div class="flash-c"><b>Frequente</b><strong>Genocídio indígena</strong>, Trilha das Lágrimas e a crítica ao mito do faroeste.</div>
+      <div class="flash-c"><b>Frequente</b><strong>Mapa da expansão territorial</strong>: identificar qual território veio de compra, de guerra ou de acordo.</div>
+      <div class="flash-c"><b>Comparativo</b><strong>EUA × Brasil</strong>: dois países escravistas nas Américas, com desfechos abolicionistas diferentes (guerra civil lá, processo gradual aqui).</div>
+      <div class="flash-c"><b>Conexão atual</b>Permanências do racismo estrutural: bandeira confederada, supremacismo branco, Capitólio 2021.</div>
+    </div>
+
+    <!-- ========== QUESTÃO DISSERTATIVA ========== -->
+    <h3><span class="num">I.12</span>A questão dissertativa do material — resolvida</h3>
+
+    <div class="questao">
+      <div class="q-cab">Questão discursiva · EUA no século XIX · Média · 6 linhas · 1,0 ponto</div>
+      <div class="q-corpo">
+        <p><em>“Tinha que haver uma luta. Talvez não fosse necessário uma guerra… O país se chamava Estados Unidos, mas só no nome, não na realidade. Os Estados do Sul e os do Norte trabalhavam de maneira diferente, pensavam diferente, viviam diferente.”</em></p>
+        <p class="caixa c-fonte" style="margin:8px 0 14px">Leo Huberman — <em>História da Riqueza dos EUA</em>.</p>
+        <p><strong>Considerando os conflitos mencionados pelo texto no ambiente norte-americano do século XIX, identifique as principais divergências entre os Estados do Norte e do Sul, geradoras da Guerra de Secessão.</strong></p>
+
+        <details class="gab">
+          <summary>Ver o gabarito oficial do material</summary>
+          <div class="gab-corpo">
+            <p>“Os Estados do Norte, representados pelo Partido Republicano, defendiam uma <strong>política protecionista</strong>, que poderia garantir o <strong>domínio sobre o mercado interno ampliado com as imigrações</strong> e, com isso, ser um estímulo para o <strong>desenvolvimento de suas indústrias</strong>. A defesa de um eventual <strong>abolicionismo</strong> da escravidão entraria como <strong>mais um elemento dentro dessa lógica</strong>.</p>
+            <p>Os Estados do Sul, <strong>agrários e escravistas</strong>, pretendiam <strong>preservar suas exportações de gêneros primários para a Inglaterra</strong> e <strong>não incomodá-la com tarifas de importação</strong>; ao mesmo tempo, temiam algum questionamento mais sério em relação à escravidão.</p>
+            <p style="margin-bottom:0">A <strong>eleição de Abraham Lincoln</strong> e uma circunstância de <strong>hegemonia do Partido Republicano</strong> colocam o <strong>protecionismo</strong> e a <strong>abolição (em menor escala)</strong> como temas prováveis de discussão, voto e implementação. Diante disso, os Estados do Sul resolvem <strong>romper com a União</strong>, gerando a guerra civil americana.”</p>
+          </div>
+        </details>
+
+        <details class="gab">
+          <summary>Como estruturar sua resposta em 6 linhas</summary>
+          <div class="gab-corpo">
+            <p>Um gabarito de 6 linhas não comporta narrativa. Use esta arquitetura de <strong>quatro movimentos</strong>, um por par de linhas:</p>
+            <ol>
+              <li><strong>Norte (2 linhas):</strong> Partido Republicano · protecionismo · mercado interno ampliado pela imigração · industrialização.</li>
+              <li><strong>Sul (2 linhas):</strong> agrário e escravista · livre-cambismo para não irritar a Inglaterra, compradora do algodão · defesa da escravidão.</li>
+              <li><strong>Estopim (1 linha):</strong> eleição de Lincoln + hegemonia republicana tornam protecionismo e abolição pauta provável.</li>
+              <li><strong>Desfecho (1 linha):</strong> o Sul rompe com a União → guerra civil.</li>
+            </ol>
+            <p style="margin-bottom:0"><strong>Palavras que o corretor procura:</strong> <em>protecionismo</em>, <em>livre-cambismo</em>, <em>mercado interno</em>, <em>trabalho livre × trabalho escravo</em>, <em>Partido Republicano × Partido Democrata</em>, <em>hegemonia</em>, <em>secessão</em>. <strong>Erro que zera pontos:</strong> reduzir tudo a “o Norte era bonzinho e queria libertar os escravos”. O material rejeita explicitamente essa leitura.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== VÍDEOS EUA ========== -->
+<section id="eua-video" class="bloco">
+  <div class="faixa">
+    <h3 style="margin-top:0"><span class="num">I.13</span>Aulas completas no YouTube — EUA no século XIX</h3>
+    <p>Clique no cartão e você vai <strong>direto ao vídeo</strong>. Sugestão de ordem: comece pela aula panorâmica, depois aprofunde na Guerra de Secessão e feche com as doutrinas.</p>
+
+    <div class="videos">
+      <a class="video" href="https://www.youtube.com/watch?v=J9ii1Y9FV0A" target="_blank" rel="noopener noreferrer">
+        <span class="v-canal">Brasil Escola</span>
+        <span class="v-tit">EUA no Século XIX</span>
+        <p class="v-desc">Aula panorâmica: os principais eventos da história dos Estados Unidos ao longo do século XIX, da marcha para o Oeste até a política externa. É o vídeo que mais se aproxima do recorte exato do seu capítulo — comece por ele.</p>
+        <span class="v-link">youtube.com/watch?v=J9ii1Y9FV0A</span>
+      </a>
+
+      <a class="video" href="https://www.youtube.com/watch?v=OjQFH5aWSnY" target="_blank" rel="noopener noreferrer">
+        <span class="v-canal">Brasil Escola</span>
+        <span class="v-tit">Guerra de Secessão</span>
+        <p class="v-desc">Aula dedicada à guerra civil americana (1861–1865): rivalidade Norte × Sul, disputa pela ocupação dos novos territórios, questão do trabalho escravo e o desfecho abolicionista. Detalha exatamente o que a questão dissertativa do seu material cobra.</p>
+        <span class="v-link">youtube.com/watch?v=OjQFH5aWSnY</span>
+      </a>
+
+      <a class="video" href="https://www.youtube.com/watch?v=aZp6wbf6SRY" target="_blank" rel="noopener noreferrer">
+        <span class="v-canal">Aula de História</span>
+        <span class="v-tit">EUA no Século XIX — expansão, doutrinas e Secessão</span>
+        <p class="v-desc">Vídeo sobre a expansão dos EUA que reúne, num só lugar, Destino Manifesto, Marcha para o Oeste, Doutrina Monroe, <em>Big Stick</em> e Guerra de Secessão. Cobre a mesma sequência de tópicos dos seus slides.</p>
+        <span class="v-link">youtube.com/watch?v=aZp6wbf6SRY</span>
+      </a>
+
+      <a class="video" href="https://www.youtube.com/watch?v=BgOQujKskok" target="_blank" rel="noopener noreferrer">
+        <span class="v-canal">Aula de História</span>
+        <span class="v-tit">EUA no século XIX: Doutrina Monroe e o Destino Manifesto</span>
+        <p class="v-desc">Recorte focado nas duas ideias que mais confundem aluno: a diferença entre o que Monroe (1823) propôs e o que o Destino Manifesto justificou. Ótimo para fixar o item I.8.</p>
+        <span class="v-link">youtube.com/watch?v=BgOQujKskok</span>
+      </a>
+
+      <a class="video" href="https://www.youtube.com/watch?v=rh2vqrtHEvg" target="_blank" rel="noopener noreferrer">
+        <span class="v-canal">Geobrasil · Prof. Rodrigo Rodrigues</span>
+        <span class="v-tit">Guerra de Secessão</span>
+        <p class="v-desc">Segunda abordagem da guerra civil, com ênfase nos aspectos econômicos e territoriais. Assista se a primeira explicação não tiver fechado — ouvir dois professores diferentes sobre o mesmo tema é a forma mais rápida de consolidar.</p>
+        <span class="v-link">youtube.com/watch?v=rh2vqrtHEvg</span>
+      </a>
+
+      <a class="video" href="https://www.youtube.com/watch?v=Tg4L1stzj_w" target="_blank" rel="noopener noreferrer">
+        <span class="v-canal">Prof. Arão Alves</span>
+        <span class="v-tit">EUA no século XIX: Marcha para o Oeste e Destino Manifesto</span>
+        <p class="v-desc">Fragmento de curso avançado (preparação para ECEME e CACD). Nível acima do exigido no 2º ano — use como aprofundamento se quiser densidade extra para as bancas mais concorridas.</p>
+        <span class="v-link">youtube.com/watch?v=Tg4L1stzj_w</span>
+      </a>
+
+      <a class="video" href="https://www.youtube.com/watch?v=VCXJJ7vBO9w" target="_blank" rel="noopener noreferrer">
+        <span class="v-canal">Débora Aladim</span>
+        <span class="v-tit">Independência dos Estados Unidos / Revolução Americana</span>
+        <p class="v-desc">Pré-requisito do capítulo. Se as Treze Colônias e o Tratado de 1783 ainda estiverem nebulosos, assista a este antes — o mapa do seu slide começa justamente aí.</p>
+        <span class="v-link">youtube.com/watch?v=VCXJJ7vBO9w</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PARTE II — BRASIL ============================ -->
+<section id="brasil" class="bloco">
+  <div class="faixa">
+    <div class="parte-cabeca p-br">
+      <span class="eyebrow">Parte II — Capítulos 4, 5 e 6, p. 90, vol. 4</span>
+      <h2>Brasil Império — 2º Reinado (1840–1889)</h2>
+      <p>Quase meio século de estabilidade construída sobre três pilares: um arranjo político que fingia ser inglês, uma economia movida a café e escravidão, e uma guerra que acabaria minando o próprio Império.</p>
+    </div>
+
+    <h3><span class="num">Visão geral</span>Os três blocos do 2º Reinado</h3>
+    <p class="abre">Seu material divide o período exatamente em três frentes. Elas não são independentes: cada uma alimenta as outras, e é essa <strong>interdependência</strong> que as bancas cobram.</p>
+
+    <div class="fluxo">
+      <div class="fluxo-passo" data-cor="br"><span class="p-num">Bloco A</span><b>Política interna</b>Golpe da Maioridade · pacificação · <strong>parlamentarismo às avessas</strong> · Conciliação · construção da identidade nacional.</div>
+      <div class="fluxo-passo" data-cor="br"><span class="p-num">Bloco B</span><b>Economia</b>Café em duas fases · fim do tráfico · Lei de Terras · imigração · surto industrial (Era Mauá).</div>
+      <div class="fluxo-passo" data-cor="br"><span class="p-num">Bloco C</span><b>Política externa</b>Tensão com a Inglaterra · Questão Christie · Bacia Platina · <strong>Guerra do Paraguai</strong>.</div>
+    </div>
+
+    <div class="caixa c-brasil">
+      <p class="caixa-rot">A tese que amarra o período</p>
+      <p style="margin-bottom:0">O 2º Reinado é o período em que as elites brasileiras <strong>param de brigar entre si para não perder o essencial</strong>. Depois do caos regencial, liberais e conservadores fazem um pacto: alternam-se no poder, mas <strong>ninguém toca no latifúndio nem na escravidão</strong>. A estabilidade política é, portanto, o <em>preço</em> e a <em>garantia</em> da manutenção da ordem escravista — até que a pressão externa (Inglaterra) e um desgaste interno (Guerra do Paraguai) quebrem esse arranjo.</p>
+    </div>
+
+    <!-- ========== POLÍTICA INTERNA ========== -->
+    <h3><span class="num">II.1</span>Características políticas: o Golpe da Maioridade e a pacificação</h3>
+
+    <div class="def">
+      <div class="def-termo">Golpe da Maioridade (1840)</div>
+      <div class="def-corpo"><p style="margin-bottom:0">Manobra política que antecipou a maioridade de <strong>D. Pedro II</strong>, então com <strong>14 anos</strong>, para que assumisse o trono imediatamente. Como a Constituição de 1824 fixava a maioridade aos <strong>18 anos</strong>, foi necessário um golpe — daí o nome.</p></div>
+    </div>
+
+    <div class="caixa c-comp">
+      <p class="caixa-rot">Complemento para melhor compreensão — por que “golpe”?</p>
+      <p style="margin-bottom:0">O Período Regencial (1831–1840) foi marcado por revoltas em série que ameaçavam a <strong>unidade territorial</strong> do país. O <strong>Partido Liberal</strong>, na oposição, articulou o <strong>Clube da Maioridade</strong> apostando que a presença de um imperador — mesmo adolescente — restauraria a autoridade central e daria aos liberais acesso ao poder. Foi um golpe <em>parlamentar</em>, não militar: um recurso <strong>extraconstitucional</strong> para resolver uma crise de legitimidade. Guarde a fórmula: <strong>a monarquia foi usada como remédio contra a desagregação</strong>.</p>
+    </div>
+
+    <h4>A restauração da ordem e a pacificação (1840–48)</h4>
+    <p>O material lista as <strong>últimas revoltas armadas</strong> do Império, todas debeladas nesse ciclo:</p>
+
+    <div class="tab-env">
+      <table>
+        <caption>As últimas revoltas armadas — conforme o slide</caption>
+        <thead><tr><th>Revolta</th><th>Onde</th><th>Quando</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Revoltas Liberais</strong></td><td>São Paulo e Minas Gerais</td><td class="num">1842</td></tr>
+          <tr><td><strong>Revolução Farroupilha</strong></td><td>Rio Grande do Sul e Santa Catarina</td><td class="num">1835–1845</td></tr>
+          <tr><td><strong>Revolução Praieira</strong></td><td>Pernambuco</td><td class="num">1848–1850</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="caixa c-comp">
+      <p class="caixa-rot">Complemento para melhor compreensão</p>
+      <p style="margin-bottom:0">A <strong>Praieira</strong> merece destaque: foi a <strong>última revolta do Império</strong> e a única do 2º Reinado propriamente dito. Depois dela, o Brasil viveu <strong>quatro décadas sem revolta armada regional</strong> — algo notável para a América Latina do século XIX, mergulhada em caudilhismo e guerras civis. Essa estabilidade excepcional é o argumento central de quem defende que a monarquia “segurou” a unidade brasileira. É também o que torna tão dramática a queda de 1889.</p>
+    </div>
+
+    <!-- ========== PARLAMENTARISMO ========== -->
+    <h3><span class="num">II.2</span>Transação e Conciliação: o parlamentarismo às avessas</h3>
+    <p class="abre">Este é o conceito <strong>mais cobrado</strong> de toda a política interna do 2º Reinado. Se você entender o mecanismo, acerta qualquer questão sobre ele — inclusive as que vêm com charge.</p>
+
+    <p>Segundo o slide: <em>“a partir de <strong>1848</strong> as elites conservadoras e liberais se conciliam para <strong>garantir o trabalho escravo e o latifúndio no Brasil</strong>. A estabilidade foi garantida pelo <strong>parlamentarismo às avessas</strong>.”</em></p>
+
+    <div class="duo">
+      <div class="duo-lado duo-a">
+        <span class="tag">Modelo inglês</span>
+        <h6>Parlamentarismo clássico</h6>
+        <ul>
+          <li>O <strong>povo elege</strong> o Parlamento.</li>
+          <li>O Parlamento (maioria) <strong>indica o gabinete</strong>.</li>
+          <li>O rei apenas <strong>referenda</strong>.</li>
+          <li><strong>O rei reina, mas não governa.</strong></li>
+        </ul>
+      </div>
+      <div class="duo-lado duo-c">
+        <span class="tag">Modelo brasileiro</span>
+        <h6>Parlamentarismo às avessas</h6>
+        <ul>
+          <li><strong>Cabia ao imperador nomear o ministério.</strong></li>
+          <li>O ministério então <strong>organizava as eleições</strong> — e sempre vencia.</li>
+          <li>Instala-se um <strong>rodízio no poder</strong>.</li>
+          <li><strong>Quem reinava, governava e administrava era o rei.</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="esquema">POR QUE "ÀS AVESSAS"? — a inversão da ordem
+
+  <i>INGLATERRA</i>                        <u>BRASIL</u>
+
+  ELEIÇÃO                             IMPERADOR
+     ↓                                    ↓
+  PARLAMENTO                          GABINETE (nomeado)
+     ↓                                    ↓
+  GABINETE                            ELEIÇÃO (organizada
+     ↓                                    ↓  pelo gabinete)
+  REI referenda                       PARLAMENTO
+                                       (com a maioria que
+  <b>de baixo para cima</b>                  o gabinete quis)
+
+                                      <b>de cima para baixo</b>
+
+  A engrenagem: o imperador demite um gabinete e nomeia outro
+  → o novo gabinete convoca eleições → como o gabinete controla
+  as autoridades locais, ele "fabrica" sua própria maioria
+  → o Parlamento sai do jeito que o imperador desenhou.</div>
+
+    <div class="def">
+      <div class="def-termo">Poder Moderador</div>
+      <div class="def-corpo"><p style="margin-bottom:0"><strong>Complemento para melhor compreensão.</strong> A peça que torna tudo isso legal. Criado pela Constituição de <strong>1824</strong> e inspirado em <strong>Benjamin Constant</strong>, era um <strong>quarto poder</strong>, privativo do imperador, definido como “a chave de toda a organização política”. Permitia-lhe <strong>dissolver a Câmara</strong>, <strong>nomear e demitir ministros</strong>, <strong>nomear senadores vitalícios</strong> e suspender magistrados. É ele que sustenta juridicamente o parlamentarismo às avessas. <strong>Sem Poder Moderador, não existe rodízio.</strong></p></div>
+    </div>
+
+    <h4>A charge “O rei se diverte” — a imagem do slide</h4>
+    <p>O material reproduz, sob o título <strong>A CONCILIAÇÃO</strong>, a charge <strong>“O rei se diverte”</strong>, de <strong>Faria</strong>, publicada no jornal <strong><em>O Mequetrefe</em>, em 9/1/1878</strong>. É uma das imagens mais cobradas sobre o tema. Veja como lê-la:</p>
+
+    <div class="caixa c-brasil">
+      <p class="caixa-rot">Leitura da charge, elemento por elemento</p>
+      <ul class="limpa" style="margin-bottom:0">
+        <li><strong>Ao centro, de coroa:</strong> <strong>D. Pedro II</strong>, enorme, de braços abertos.</li>
+        <li><strong>Nas mãos dele:</strong> as <strong>cordas de um carrossel</strong> — ele é quem move o brinquedo.</li>
+        <li><strong>Nos cavalinhos:</strong> as figuras que representam os <strong>partidos Liberal e Conservador</strong>, girando alternadamente.</li>
+        <li><strong>O sentido:</strong> os partidos <strong>não disputam</strong> o poder — eles são <strong>girados</strong> por quem segura as cordas. O rodízio é uma <strong>diversão do imperador</strong>, não uma alternância democrática.</li>
+        <li><strong>O título é irônico:</strong> “o rei se diverte” enquanto o país acredita estar sob um sistema representativo.</li>
+      </ul>
+    </div>
+
+    <div class="caixa c-atencao">
+      <p class="caixa-rot">A frase que resume o período — e que cai em prova</p>
+      <p style="margin-bottom:0">O slide encerra com uma síntese perfeita: <strong>“A política era tratada agora nos gabinetes, não nas ruas.”</strong> Guarde-a. Ela explica em nove palavras por que o 2º Reinado teve quarenta anos sem revolta: o conflito <strong>não desapareceu</strong> — ele foi <strong>transferido para dentro do Estado</strong>, onde as elites o resolviam entre si. Complementa a célebre atribuição ao deputado Holanda Cavalcanti: “nada mais parecido com um saquarema (conservador) do que um luzia (liberal) no poder”.</p>
+    </div>
+
+    <!-- ========== IDENTIDADE NACIONAL ========== -->
+    <h3><span class="num">II.3</span>A construção de uma identidade nacional</h3>
+    <p>Um Estado recém-independente precisa de mais do que exército e leis: precisa de uma <strong>história</strong> que o justifique. O 2º Reinado fabrica a sua.</p>
+
+    <div class="esquema"><b>1838 · Fundação do INSTITUTO HISTÓRICO E GEOGRÁFICO BRASILEIRO (IHGB)</b>
+        │
+        ▼
+  <i>Produção de uma HISTÓRIA NACIONAL</i>
+        │
+        ▼
+  <b>Carl von Martius</b> — tese da <i>"harmonia das três raças"</i>
+  (indígena + africano + europeu formariam, juntos,
+   o "povo brasileiro" — com o europeu no comando)
+        │
+        ▼
+  <u>Resultado: a "HISTÓRIA OFICIAL" do Império</u>
+        │
+        ▼
+  Na arte e na literatura: <b>ROMANTISMO ➜ INDIANISMO</b>
+                            (o índio idealizado)</div>
+
+    <h4>As obras citadas no material</h4>
+    <div class="tab-env">
+      <table>
+        <caption>Pinturas reproduzidas nos slides</caption>
+        <thead><tr><th>Obra</th><th>Autor</th><th>Ano</th><th>O que representa</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Moema</strong> — personagem do poema épico <em>Caramuru</em></td><td>Victor Meirelles</td><td class="num">1866</td><td>Indígena idealizada; o índio como figura trágica e nobre.</td></tr>
+          <tr><td><strong>Iracema</strong>, óleo sobre tela</td><td>José Maria de Medeiros</td><td class="num">1884</td><td>A heroína do romance de José de Alencar; o Indianismo em imagem.</td></tr>
+          <tr><td><strong>A Primeira Missa no Brasil</strong></td><td>Victor Meirelles</td><td class="num">1861</td><td>O “mito de origem” do país: encontro pacífico e sacralizado entre europeus e indígenas.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="caixa c-comp">
+      <p class="caixa-rot">Complemento para melhor compreensão — o que essa história oficial esconde</p>
+      <p style="margin-bottom:0">Três operações ideológicas para você nomear em uma dissertativa:</p>
+      <ul class="limpa" style="margin-bottom:0">
+        <li><strong>Idealiza o indígena e o coloca no passado.</strong> Moema e Iracema morrem nos dois enredos. O índio é celebrado como <em>ancestral mítico</em> — nunca como povo <em>vivo</em> com direito à terra. Enquanto se pintava Iracema, indígenas reais eram expulsos de seus territórios.</li>
+        <li><strong>Apaga o africano do centro da cena.</strong> Note que <em>nenhuma</em> das três pinturas do slide tem a população negra como protagonista — e ela era, então, parte majoritária da força de trabalho do país. A escravidão não cabe no quadro nacional idealizado.</li>
+        <li><strong>Sacraliza a origem.</strong> <em>A Primeira Missa</em> transforma a invasão colonial em <strong>cerimônia religiosa harmoniosa</strong>. É a conquista contada como comunhão.</li>
+      </ul>
+    </div>
+
+    <div class="caixa c-atencao">
+      <p class="caixa-rot">Paralelo direto com a Parte I</p>
+      <p style="margin-bottom:0">Compare com o mito do <strong><em>Far West</em></strong> nos EUA. Nos dois casos, <strong>arte e literatura constroem uma identidade nacional que naturaliza a violência da conquista</strong>. Lá, o pioneiro heroico; aqui, o índio nobre e a missa pacífica. Uma comparação como essa em redação ou dissertativa <strong>vale nota máxima</strong>, porque mostra que você entendeu o mecanismo, não só o exemplo.</p>
+    </div>
+
+    <!-- ========== ECONOMIA DO CAFÉ ========== -->
+    <h3><span class="num">II.4</span>A economia do 2º Reinado: o café em duas fases</h3>
+    <p class="abre">Esta é a divisão mais importante da economia imperial. Guarde-a como um par de colunas: <strong>Vale do Paraíba</strong> versus <strong>Oeste Paulista</strong>. Quase tudo que cai em prova sobre economia do 2º Reinado se decide nessa comparação.</p>
+
+    <div class="duo">
+      <div class="duo-lado duo-b">
+        <span class="tag">1ª fase · 1840–1860</span>
+        <h6>Vale do Paraíba</h6>
+        <ul>
+          <li>Café plantado sob forma de <strong><em>plantation</em></strong>.</li>
+          <li><strong>Cultivo predatório</strong> da região — o que vai gerar <strong>esgotamento do solo</strong> e queda de produção no longo prazo.</li>
+          <li><strong>Uso intenso do trabalho escravo.</strong></li>
+          <li>Forma-se uma elite econômica que, junto às antigas elites proprietárias (senhores de engenho etc.), será a <strong>base de apoio político do 2º Reinado</strong>: os <strong>BARÕES DO CAFÉ</strong>.</li>
+        </ul>
+      </div>
+      <div class="duo-lado duo-c">
+        <span class="tag">2ª fase · 1860–1930</span>
+        <h6>Oeste Paulista</h6>
+        <ul>
+          <li><strong>Condições favoráveis ao plantio</strong>: a <strong>terra roxa</strong> e o <strong>relevo favorável</strong>.</li>
+          <li><strong>Cultivo mais racional do solo.</strong></li>
+          <li><strong>Uso do trabalho imigrante</strong> — primeiro o <strong>Sistema de Parceria</strong>, depois a <strong>Imigração Subvencionada</strong>; <strong>pouco uso de mão de obra escrava</strong>.</li>
+          <li>Surge uma <strong>nova elite, mais capitalista</strong>: a <strong>“burguesia cafeeira”</strong>. Ela estará por trás do <strong>Partido Republicano (1873)</strong> e será base social importante para o <strong>golpe de 15/11/1889</strong>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="caixa c-brasil">
+      <p class="caixa-rot">A consequência política — este é o pulo do gato</p>
+      <p style="margin-bottom:0">As duas fases não são apenas <em>etapas</em>: são <strong>duas elites com projetos opostos</strong>. A do Vale do Paraíba depende da escravidão e do Império — é <strong>monarquista</strong>. A do Oeste Paulista trabalha com assalariado imigrante, tem mentalidade empresarial e não precisa do Império — é <strong>republicana</strong>. <strong>É a segunda elite que derruba a primeira em 1889.</strong> Quando a prova perguntar “por que a monarquia caiu?”, a resposta começa aqui.</p>
+    </div>
+
+    <div class="caixa c-comp">
+      <p class="caixa-rot">Complemento para melhor compreensão — a grafia “terra rossa”</p>
+      <p style="margin-bottom:0">O slide escreve <em>“terra rossa”</em>. Em português, a forma consagrada é <strong>terra roxa</strong> — solo de origem basáltica, muito fértil, típico do oeste paulista e do norte do Paraná. A palavra vem do italiano <em>rossa</em> (“vermelha”), como os imigrantes italianos a chamavam; a semelhança sonora com “roxa” fixou a forma aportuguesada. Nas duas grafias, é o mesmo solo. Escreva <strong>terra roxa</strong>.</p>
+    </div>
+
+    <h4>O que a tabela de exportações mostra</h4>
+    <p>O material traz uma tabela densa que vale mais que dez parágrafos. Ela mostra a participação percentual de cada produto no valor total das exportações brasileiras, década a década:</p>
+
+    <div class="tab-env">
+      <table>
+        <caption>Tabela 1 · Exportação de mercadorias — % do valor dos oito produtos principais sobre o valor da exportação</caption>
+        <thead>
+          <tr><th>Decênio</th><th class="num">Total</th><th class="num">Café</th><th class="num">Açúcar</th><th class="num">Cacau</th><th class="num">Erva-mate</th><th class="num">Fumo</th><th class="num">Algodão</th><th class="num">Borracha</th><th class="num">Couros e peles</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1821–30</td><td class="num">85,8</td><td class="num">18,4</td><td class="num">30,1</td><td class="num">0,5</td><td class="num">—</td><td class="num">2,5</td><td class="num">20,6</td><td class="num">0,1</td><td class="num">13,6</td></tr>
+          <tr><td>1831–40</td><td class="num">89,8</td><td class="num">43,8</td><td class="num">24,0</td><td class="num">0,6</td><td class="num">0,5</td><td class="num">1,9</td><td class="num">10,8</td><td class="num">0,3</td><td class="num">7,9</td></tr>
+          <tr><td>1841–50</td><td class="num">88,2</td><td class="num">41,4</td><td class="num">26,7</td><td class="num">1,0</td><td class="num">0,9</td><td class="num">1,8</td><td class="num">7,5</td><td class="num">0,4</td><td class="num">8,5</td></tr>
+          <tr><td>1851–60</td><td class="num">90,9</td><td class="num">48,8</td><td class="num">21,2</td><td class="num">1,0</td><td class="num">1,6</td><td class="num">2,6</td><td class="num">6,2</td><td class="num">2,3</td><td class="num">7,2</td></tr>
+          <tr class="destaca"><td>1861–70</td><td class="num">90,3</td><td class="num">45,5</td><td class="num">12,3</td><td class="num">0,9</td><td class="num">1,2</td><td class="num">3,0</td><td class="num">18,3</td><td class="num">3,1</td><td class="num">6,0</td></tr>
+          <tr><td>1871–80</td><td class="num">95,1</td><td class="num">56,6</td><td class="num">11,8</td><td class="num">1,2</td><td class="num">1,5</td><td class="num">3,4</td><td class="num">9,5</td><td class="num">5,5</td><td class="num">5,6</td></tr>
+          <tr><td>1881–90</td><td class="num">92,3</td><td class="num">61,5</td><td class="num">9,9</td><td class="num">1,6</td><td class="num">1,2</td><td class="num">2,7</td><td class="num">4,2</td><td class="num">8,0</td><td class="num">3,2</td></tr>
+          <tr><td>1891–1900</td><td class="num">95,6</td><td class="num">64,5</td><td class="num">6,0</td><td class="num">1,5</td><td class="num">1,3</td><td class="num">2,2</td><td class="num">2,7</td><td class="num">15,0</td><td class="num">2,4</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="caixa c-fonte">Fonte reproduzida no slide: Comércio Exterior do Brasil, nº 1, do Serviço de Estatística Econômica do Ministério da Fazenda, em Hélio Schlitter Silva, <em>Tendências e características gerais do comércio exterior no século XIX</em>, Revista de História da Economia Brasileira, ano 1, jun. 1953, p. 8. Apud FAUSTO, 1994, p. 191.</p>
+
+    <div class="caixa c-brasil">
+      <p class="caixa-rot">Como ler esta tabela em prova — quatro leituras</p>
+      <ol style="margin-bottom:0">
+        <li><strong>A ascensão do café.</strong> De <strong>18,4%</strong> (1821–30) a <strong>64,5%</strong> (1891–1900). O café não apenas cresce: ele <strong>passa a ser o país</strong>. Em 1830 o Brasil exportava um pouco de tudo; em 1900 exportava café.</li>
+        <li><strong>A queda do açúcar.</strong> De <strong>30,1%</strong> a <strong>6,0%</strong>. É a <strong>decadência econômica do Norte/Nordeste</strong>, e ela explica diretamente o <strong>tráfico interprovincial</strong> do item II.6: o Norte, empobrecido, vende seus escravizados ao Sul cafeeiro.</li>
+        <li><strong>O pico do algodão em 1861–70 (18,3%).</strong> Salto de 6,2% para 18,3% e queda para 9,5% na década seguinte. <strong>Complemento para melhor compreensão:</strong> é o efeito direto da <strong>Guerra de Secessão</strong> — com o algodão do Sul dos EUA bloqueado, a Inglaterra buscou fornecedores alternativos, e o Brasil (sobretudo Nordeste e Maranhão) ocupou o vácuo. <strong>Este é o dado que liga materialmente a Parte I à Parte II desta aula.</strong></li>
+        <li><strong>A concentração aumenta.</strong> A coluna “Total” sobe de 85,8% para 95,6%: cada vez mais a pauta se resume a pouquíssimos produtos primários. É a definição prática de <strong>economia agroexportadora dependente</strong>.</li>
+      </ol>
+    </div>
+
+    <!-- ========== FIM DO TRÁFICO ========== -->
+    <h3><span class="num">II.5</span>A transição do trabalho escravo para o trabalho livre</h3>
+    <p class="abre">Este é o encadeamento mais elegante do capítulo — e um dos mais cobrados. Um <strong>imposto</strong> brasileiro provoca uma <strong>lei</strong> inglesa que provoca <strong>outra lei</strong> brasileira que provoca o <strong>surto industrial</strong>. Acompanhe a corrente.</p>
+
+    <div class="esquema">A CORRENTE COMPLETA — do imposto à industrialização
+
+<b>1810</b>  Tratados de Comércio e Navegação com a Inglaterra
+       → começa a pressão britânica contra o tráfico
+        │
+        ▼
+<b>1831</b>  Brasil "finge" abolir o tráfico
+       → a <u>"LEI PARA INGLÊS VER"</u> (Lei Feijó) — não é cumprida
+        │
+        ▼
+<b>1844</b>  <i>TARIFAS ALVES BRANCO</i> — o Brasil eleva as tarifas de
+       importação (até 60%) para aumentar a arrecadação
+       → protecionismo involuntário → <b>irrita a Inglaterra</b>
+        │
+        ▼
+<b>1845</b>  <i>BILL ABERDEEN</i> — represália inglesa:
+       a marinha britânica passa a ter o direito de aprisionar
+       qualquer navio negreiro circulando pelo Atlântico
+        │
+        ▼
+<b>1850</b>  <i>LEI EUSÉBIO DE QUEIRÓS</i> — o Parlamento brasileiro
+       vota a lei que <b>efetivamente elimina</b> o tráfico
+        │
+        ├──► liberação de capitais → <b>SURTO INDUSTRIAL / ERA MAUÁ</b>
+        ├──► busca de mão de obra → <b>IMIGRAÇÃO</b>
+        └──► escassez interna → <b>TRÁFICO INTERPROVINCIAL</b></div>
+
+    <div class="def">
+      <div class="def-termo">“Lei para inglês ver” (1831)</div>
+      <div class="def-corpo"><p style="margin-bottom:0">Expressão popular brasileira nascida exatamente aqui. A lei de <strong>7 de novembro de 1831</strong> declarava livres todos os africanos que entrassem no Brasil a partir daquela data — mas o Estado <strong>não a fiscalizava</strong>. Foi feita para <strong>satisfazer a Inglaterra no papel</strong>, sem efeito prático. Até hoje, “para inglês ver” significa <strong>algo feito só para as aparências</strong>.</p></div>
+    </div>
+
+    <h4>O dado que quebra a intuição</h4>
+    <p>Aqui está a maior <strong>pegadinha</strong> de todo o tema. Veja o que aconteceu com o tráfico <strong>depois</strong> do Bill Aberdeen:</p>
+
+    <div class="tab-env">
+      <table>
+        <caption>Nº de escravizados que entraram no Brasil, 1845–1848 — tabela do slide</caption>
+        <thead><tr><th>Ano</th><th class="num">Nº de escravizados que entraram no Brasil</th></tr></thead>
+        <tbody>
+          <tr><td>1845 <em>(ano do Bill Aberdeen)</em></td><td class="num">19.453</td></tr>
+          <tr><td>1846</td><td class="num">50.325</td></tr>
+          <tr><td>1847</td><td class="num">56.172</td></tr>
+          <tr class="destaca"><td>1848</td><td class="num">60.000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="caixa c-fonte">Dados extraídos de Emília Viotti da Costa. <em>Da senzala à colônia</em>. São Paulo: Unesp, 1998. Reproduzidos no slide 9.</p>
+
+    <div class="caixa c-atencao">
+      <p class="caixa-rot">Leia com atenção: o tráfico TRIPLICOU depois da lei que o proibia</p>
+      <p style="margin-bottom:0">De <strong>19.453</strong> em 1845 para <strong>60.000</strong> em 1848. Por quê? Porque a ameaça britânica funcionou como um <strong>anúncio de escassez futura</strong>: os traficantes e fazendeiros correram para <strong>estocar</strong> mão de obra antes que o fechamento se tornasse real. É contraintuitivo e por isso mesmo é <strong>prato cheio para banca</strong>. Se aparecer uma alternativa dizendo “o Bill Aberdeen reduziu imediatamente o tráfico”, está <strong>errada</strong>.</p>
+    </div>
+
+    <h4>E o que a Lei Eusébio de Queirós de fato fez</h4>
+    <p>O segundo conjunto de dados, este vindo de uma questão do <strong>ENEM</strong>, mostra o contraste — e agora sim, o desabamento:</p>
+
+    <div class="tab-env">
+      <table>
+        <caption>Estimativa do número de escravos africanos desembarcados no Brasil entre 1846 e 1852</caption>
+        <thead><tr><th>Ano</th><th class="num">Nº de africanos escravizados desembarcados</th></tr></thead>
+        <tbody>
+          <tr><td>1846</td><td class="num">64.262</td></tr>
+          <tr><td>1847</td><td class="num">75.893</td></tr>
+          <tr><td>1848</td><td class="num">76.338</td></tr>
+          <tr><td>1849</td><td class="num">70.827</td></tr>
+          <tr class="destaca"><td>1850 <em>(Lei Eusébio de Queirós)</em></td><td class="num">37.672</td></tr>
+          <tr><td>1851</td><td class="num">7.058</td></tr>
+          <tr><td>1852</td><td class="num">1.234</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="caixa c-fonte">Disponível em: www.slavevoyages.org. Acesso em 24 fev. 2012 (adaptado). Tabela reproduzida no slide 10, oriunda do ENEM 2015 (2ª aplicação).</p>
+
+    <div class="caixa c-brasil">
+      <p class="caixa-rot">Como usar as duas tabelas juntas</p>
+      <p style="margin-bottom:0">Coloque-as lado a lado e você tem a <strong>narrativa completa em números</strong>: <strong>1845–1849 = corrida de estoque</strong> (o tráfico sobe apesar da proibição inglesa); <strong>1850 = corte</strong> (cai pela metade no ano da lei brasileira); <strong>1851–52 = colapso</strong> (de 76 mil para 1,2 mil em quatro anos, uma queda de ~98%). <strong>A lição:</strong> a repressão externa sozinha não bastou — o tráfico só acabou quando o <strong>próprio Estado brasileiro</strong> decidiu reprimi-lo. Este é <em>exatamente</em> o comando da questão do ENEM que usa essa tabela.</p>
+    </div>
+
+    <h4>Consequências da extinção do tráfico</h4>
+    <div class="fluxo">
+      <div class="fluxo-passo" data-cor="br"><span class="p-num">Consequência 01</span><b>Liberação de capital</b>Dinheiro antes imobilizado na compra de africanos fica livre para <strong>aplicação em outros setores da economia</strong>.</div>
+      <div class="fluxo-passo" data-cor="br"><span class="p-num">Consequência 02</span><b>Início da imigração</b>Entrada de imigrantes para algumas fazendas de café — o <strong>Sistema de Parceria</strong>.</div>
+      <div class="fluxo-passo" data-cor="br"><span class="p-num">Consequência 03</span><b>Modernização econômica</b>Ferrovias, bancos, iluminação a gás, telégrafo — a base do surto industrial.</div>
+      <div class="fluxo-passo" data-cor="cm"><span class="p-num">Consequência 04</span><b>Tráfico interprovincial</b>Sem novos africanos, o Sul cafeeiro compra os escravizados do Norte decadente.</div>
+    </div>
+
+    <!-- ========== TRÁFICO INTERPROVINCIAL ========== -->
+    <h3><span class="num">II.6</span>O comércio interno de escravizados</h3>
+    <p>O material explica com precisão o dilema: <em>“Não podendo contar com a participação de escravos [novos], e, ao mesmo tempo, <strong>não podendo prescindir de seu trabalho</strong>, os fazendeiros do Sul começaram a comprar os escravos do Norte.”</em></p>
+
+    <div class="esquema">O TRÁFICO INTERPROVINCIAL — a geografia da escravidão se inverte
+
+   <u>NORTE / NORDESTE</u>                     <i>SUL / SUDESTE</i>
+   (açúcar em decadência)                (café em expansão)
+
+   Preço do escravizado: BAIXO    ────►   Preço: ALTO
+   Não consegue mais pagar                Pode pagar qualquer preço
+        │                                      │
+        └──────────► FLUXO DE PESSOAS ─────────┘
+
+   <b>DUPLA CONSEQUÊNCIA</b> (conforme o slide):
+   ① AGRAVOU a situação econômica do Norte
+      (perde sua força de trabalho)
+   ② NÃO RESOLVEU as necessidades de mão de obra do Sul
+      (o volume era insuficiente para a expansão cafeeira)
+
+   ⇒ Por isso o Sul precisa da <b>IMIGRAÇÃO</b>.</div>
+
+    <div class="caixa c-comp">
+      <p class="caixa-rot">Complemento para melhor compreensão — a consequência política oculta</p>
+      <p style="margin-bottom:0">Ao esvaziar o Norte de escravizados, o tráfico interprovincial <strong>enfraqueceu o compromisso do Norte com a escravidão</strong>. Sem escravizados, os proprietários nortistas não tinham por que defender a instituição. Isso ajuda a explicar por que, nos anos 1880, as <strong>províncias do Ceará (1884)</strong> e do <strong>Amazonas (1884)</strong> aboliram a escravidão localmente, <em>antes</em> da Lei Áurea. A escravidão se concentrou no Sudeste — e, concentrada, <strong>ficou politicamente isolada</strong>.</p>
+    </div>
+
+    <!-- ========== SURTO INDUSTRIAL ========== -->
+    <h3><span class="num">II.7</span>Surto industrial 1860/70 — a Era Mauá</h3>
+    <p>O material retoma toda a corrente causal e a fecha no <strong>surto industrial</strong>. Repare que é a <em>mesma</em> sequência do item II.5, agora vista pelo lado do capital:</p>
+
+    <div class="fluxo">
+      <div class="fluxo-passo" data-cor="br"><span class="p-num">Etapa 01</span><b>Tarifas Alves Branco (1844)</b>Para ampliar a arrecadação de impostos, o governo eleva as tarifas de importação <strong>para 60%</strong>, gerando um <strong>protecionismo alfandegário involuntário</strong> — e irritando a Inglaterra.</div>
+      <div class="fluxo-passo" data-cor="br"><span class="p-num">Etapa 02</span><b>Bill Aberdeen (1845)</b>A Inglaterra, em represália, aumenta a pressão contra o tráfico negreiro.</div>
+      <div class="fluxo-passo" data-cor="br"><span class="p-num">Etapa 03</span><b>Lei Eusébio de Queirós (1850)</b>O Estado brasileiro é obrigado a abolir o tráfico “de verdade”.</div>
+      <div class="fluxo-passo" data-cor="vd"><span class="p-num">Etapa 04a</span><b>Mão de obra</b>A busca por alternativas leva às primeiras levas de imigrantes → <strong>aumento gradativo do mercado interno</strong>.</div>
+      <div class="fluxo-passo" data-cor="vd"><span class="p-num">Etapa 04b</span><b>Capital</b><strong>Vultosa liberação de capitais</strong>: os comerciantes de escravizados procuram outras alternativas de ganho e investimento.</div>
+      <div class="fluxo-passo" data-cor="vd"><span class="p-num">Etapa 05</span><b>Onde o dinheiro foi parar</b><strong>Ferrovias</strong> e <strong>pequenas indústrias</strong>, além de <strong>iluminação a gás</strong> e <strong>cabo submarino para o telégrafo</strong>.</div>
+    </div>
+
+    <div class="caixa c-brasil">
+      <p class="caixa-rot">O protecionismo involuntário — conceito de alto rendimento</p>
+      <p style="margin-bottom:0">Preste atenção na palavra <strong>“involuntário”</strong>, que o próprio slide usa. As Tarifas Alves Branco <strong>não foram criadas para proteger a indústria brasileira</strong> — foram criadas para <strong>arrecadar</strong>, porque o Estado imperial estava endividado. O efeito protecionista foi um <strong>subproduto não intencional</strong>. Saber distinguir <em>intenção</em> de <em>efeito</em> é o tipo de precisão que separa um 8 de um 10 numa dissertativa.</p>
+    </div>
+
+    <h4>Quem foi o Barão de Mauá</h4>
+    <div class="def">
+      <div class="def-termo">Irineu Evangelista de Souza, o Barão de Mauá</div>
+      <div class="def-corpo">
+        <p style="margin-bottom:0">Segundo o slide: <strong>empresário e banqueiro brasileiro</strong> que <strong>comprou o Banco do Brasil</strong> (na época, um <strong>banco privado</strong>) e foi <strong>sócio de empresários ingleses em várias ferrovias</strong>, no Brasil e no <strong>Uruguai</strong>. Foi um dos comerciantes que aproveitaram os capitais liberados pelo fim do tráfico.</p>
+      </div>
+    </div>
+
+    <div class="caixa c-comp">
+      <p class="caixa-rot">Complemento para melhor compreensão — por que Mauá fracassou</p>
+      <p style="margin-bottom:0">Mauá construiu a <strong>primeira ferrovia do Brasil</strong> (1854, Rio de Janeiro), instalou a <strong>iluminação a gás</strong> na capital e participou do <strong>cabo submarino</strong> que ligou o Brasil à Europa. Mesmo assim, faliu em 1878. As causas são muito cobradas: <strong>(i)</strong> a economia continuava organizada em torno do <strong>latifúndio escravista</strong>, que não tinha interesse em industrialização; <strong>(ii)</strong> a <strong>Tarifa Silva Ferraz (1860)</strong> e a legislação bancária restringiram o crédito e a criação de empresas; <strong>(iii)</strong> ele apostou pesado na <strong>região platina</strong>, e a <strong>Guerra do Paraguai</strong> arruinou seus negócios lá. <strong>Mauá é o símbolo do limite estrutural do Império:</strong> houve modernização, mas <strong>não houve industrialização</strong>, porque a estrutura social permanecia intacta.</p>
+    </div>
+
+    <!-- ========== LEI DE TERRAS E IMIGRAÇÃO ========== -->
+    <h3><span class="num">II.8</span>O apoio do Estado à economia cafeeira: Lei de Terras e imigração</h3>
+
+    <div class="def">
+      <div class="def-termo">Lei de Terras (1850)</div>
+      <div class="def-corpo"><p style="margin-bottom:0">Conforme o slide: <strong>dificulta a compra das terras “devolutas”</strong> (sem dono / pertencentes ao Estado) <strong>por parte dos imigrantes</strong>, <strong>obrigando-os a trabalhar para a economia cafeeira</strong>. A partir dela, terra só se adquire por <strong>compra em dinheiro</strong> — não mais por posse ou doação.</p></div>
+    </div>
+
+    <div class="caixa c-atencao">
+      <p class="caixa-rot">A coincidência de datas que NÃO é coincidência</p>
+      <p style="margin-bottom:0"><strong>Lei Eusébio de Queirós: 4 de setembro de 1850. Lei de Terras: 18 de setembro de 1850.</strong> Duas semanas de diferença. Isso é <strong>engenharia social deliberada</strong>: o Estado fecha a porta da escravidão e, no mesmo mês, <strong>fecha a porta do acesso à terra</strong>. Resultado: o imigrante que chegar <strong>não terá alternativa senão trabalhar na fazenda alheia</strong>. Sem a Lei de Terras, o imigrante viraria pequeno proprietário e a fazenda ficaria sem braços — exatamente o que aconteceu nos EUA com o <strong>Homestead Act</strong>. <strong>Compare:</strong> o Homestead Act <em>distribui</em> terra para criar pequenos proprietários livres; a Lei de Terras <em>bloqueia</em> o acesso à terra para criar trabalhadores dependentes. <strong>Mesma década, projetos opostos.</strong> É a comparação mais valiosa desta aula inteira.</p>
+    </div>
+
+    <h4>Do Sistema de Parceria à Imigração Subvencionada</h4>
+    <div class="duo">
+      <div class="duo-lado duo-b">
+        <span class="tag">Primeiro modelo</span>
+        <h6>Sistema de Parceria</h6>
+        <ul>
+          <li>O fazendeiro <strong>adiantava</strong> a viagem e a instalação; o imigrante pagava com parte da colheita.</li>
+          <li>Ligado à firma <strong>Vergueiro &amp; Cia.</strong>, na fazenda Ibicaba.</li>
+          <li><strong>Fracassou:</strong> as dívidas eram impagáveis e o regime se aproximava de servidão por dívida.</li>
+        </ul>
+      </div>
+      <div class="duo-lado duo-c">
+        <span class="tag">Segundo modelo</span>
+        <h6>Imigração Subvencionada</h6>
+        <ul>
+          <li>Diante do fracasso da parceria, <strong>o Estado passa a patrocinar a imigração</strong>.</li>
+          <li>O slide indica o marco <strong>a partir de 1871</strong>.</li>
+          <li>O <strong>governo</strong> (imperial e depois provincial de São Paulo) <strong>paga a passagem</strong> do imigrante europeu.</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>O material ilustra o tema com a <strong>família Boff, em Caxias do Sul, 1904</strong> (Museu Municipal de Caxias do Sul), e remete às razões da emigração italiana documentadas pelo IBGE.</p>
+
+    <div class="caixa c-comp">
+      <p class="caixa-rot">Complemento para melhor compreensão — dois fluxos distintos</p>
+      <p style="margin-bottom:0">Não confunda os dois destinos da imigração no Brasil, que a foto da família Boff ajuda a lembrar: <strong>(1) São Paulo</strong> — imigrantes (sobretudo <strong>italianos</strong>) vão para as <strong>fazendas de café</strong>, no regime de <strong>colonato</strong>, sem acesso à terra. <strong>(2) Sul (RS, SC, PR)</strong> — imigrantes (<strong>alemães</strong> desde 1824, <strong>italianos</strong> a partir de 1875) recebem <strong>pequenos lotes em colônias</strong> e se tornam <strong>pequenos proprietários</strong>. Daí a paisagem agrária tão diferente entre São Paulo (grande propriedade) e a Serra Gaúcha (minifúndios familiares) até hoje. <strong>Nuance sobre a data:</strong> o slide marca 1871; a subvenção se torna maciça mesmo nas <strong>décadas de 1880</strong>, quando a província de São Paulo assume o custo integral das passagens — foi então que os números explodiram.</p>
+    </div>
+
+    <!-- ========== POLÍTICA EXTERNA ========== -->
+    <h3><span class="num">II.9</span>Política externa do 2º Reinado</h3>
+    <p>O material organiza a política externa em <strong>três frentes</strong>: a relação tensa com a Inglaterra, a diversificação comercial e a Bacia Platina.</p>
+
+    <ul class="limpa">
+      <li><strong>Relações tensas com a Inglaterra</strong>, devido à sua intensa pressão contra o tráfico (o Bill Aberdeen, por exemplo).</li>
+      <li><strong>Relativa diversificação</strong> nas exportações e importações brasileiras — <strong>EUA, França</strong> etc.</li>
+      <li><strong>A Questão Christie.</strong></li>
+    </ul>
+
+    <h4>A Questão Christie (1861–1865)</h4>
+    <div class="tab-env">
+      <table>
+        <caption>A Questão Christie, passo a passo — conforme o slide</caption>
+        <thead><tr><th>Ano</th><th>Episódio</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1861</td><td>Incidente no <strong>Rio Grande do Sul</strong> — naufrágio e saque do navio inglês <strong><em>Prince of Wales</em></strong>.</td></tr>
+          <tr><td class="num">1862</td><td>Incidente no <strong>Rio de Janeiro</strong> — prisão de <strong>marinheiros ingleses</strong>.</td></tr>
+          <tr><td class="num">1863–1865</td><td><strong>Ruptura de relações diplomáticas</strong> entre Brasil e Inglaterra.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="caixa c-brasil">
+      <p class="caixa-rot">O detalhe que as bancas adoram</p>
+      <p style="margin-bottom:0">O slide destaca: <strong>“Ruptura não afeta as transações comerciais entre os dois países.”</strong> Leia isso duas vezes. Brasil e Inglaterra <strong>romperam relações diplomáticas por dois anos e continuaram comerciando normalmente</strong>. Isso revela a natureza real do vínculo: era uma <strong>dependência econômica estrutural</strong>, não uma amizade política. A briga era de <strong>protocolo e soberania</strong>; o comércio era <strong>necessidade mútua</strong>. Se cair uma questão perguntando o que a Questão Christie demonstra sobre as relações Brasil–Inglaterra, a resposta é <strong>essa assimetria</strong>.</p>
+    </div>
+
+    <div class="caixa c-comp">
+      <p class="caixa-rot">Complemento para melhor compreensão</p>
+      <p style="margin-bottom:0"><strong>William Dougal Christie</strong> era o ministro britânico no Rio. Ao exigir indenizações, ordenou que navios de guerra ingleses <strong>apresassem navios mercantes brasileiros</strong> na barra do Rio de Janeiro — um bloqueio, na prática. D. Pedro II submeteu o caso à arbitragem do <strong>rei Leopoldo I da Bélgica</strong>, que deu <strong>ganho de causa ao Brasil</strong>; a Inglaterra teve de se desculpar. Foi uma das poucas vitórias diplomáticas brasileiras contra a potência hegemônica — e serviu ao Império como capital político interno.</p>
+    </div>
+
+    <!-- ========== GUERRA DO PARAGUAI ========== -->
+    <h3><span class="num">II.10</span>A Guerra do Paraguai (1864–1870)</h3>
+    <p class="abre">O maior conflito armado da história da América do Sul, e o assunto mais denso do seu material. Vamos por partes: <strong>por que a Bacia Platina importava · os interesses de cada país · o estopim · o conflito · as consequências</strong>.</p>
+
+    <h4>A importância da Bacia Platina</h4>
+    <div class="caixa c-comp">
+      <p class="caixa-rot">Complemento para melhor compreensão — leia o mapa antes de tudo</p>
+      <p style="margin-bottom:0">A <strong>Bacia Platina</strong> é o sistema formado pelos rios <strong>Paraná, Paraguai e Uruguai</strong>, que desaguam no <strong>Rio da Prata</strong>, entre Argentina e Uruguai. No século XIX, <strong>sem estradas e sem ferrovias no interior</strong>, esses rios eram a <strong>única via prática</strong> de circulação. Para o Brasil, eram o <strong>único caminho viável até Mato Grosso</strong> — subir pelo litoral e cruzar o interior por terra levava meses. Para o Paraguai, <strong>país sem litoral</strong>, eram a <strong>única saída para o Atlântico</strong>. Guarde: <strong>quem controla a foz controla todo mundo que está rio acima.</strong> Toda a guerra nasce dessa geografia.</p>
+    </div>
+
+    <h4>Os interesses de cada ator</h4>
+    <div class="tab-env">
+      <table>
+        <caption>Interesses na Bacia Platina — conforme o slide</caption>
+        <thead><tr><th>Ator</th><th>O que queria</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Paraguai</strong> (Solano López)</td><td>Governado por <strong>vários ditadores</strong> e, por último, pelo <strong>caudilho-ditador Solano López</strong>, tinha um <strong>plano de desenvolvimento econômico</strong> no qual a <strong>saída para o Atlântico via rios</strong> seria fundamental — assim <strong>não dependeria da boa vontade de Argentina e Brasil</strong>.</td></tr>
+          <tr><td><strong>Brasil e Inglaterra</strong></td><td>Queriam garantir a <strong>“livre navegação”</strong> na Bacia Platina.</td></tr>
+          <tr><td><strong>Brasil e Argentina</strong></td><td><strong>Interferem constantemente na política interna do Uruguai</strong>, apoiando os partidos que disputam o poder ali: <strong>Partido Blanco × Partido Colorado</strong>.</td></tr>
+          <tr class="destaca"><td><strong>Brasil</strong>, especificamente</td><td>Ter os <strong>Colorados no poder</strong> garantia os interesses de <strong>proprietários brasileiros de terras no Uruguai</strong> e a <strong>passagem pela Bacia Platina</strong>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>O caminho até o estopim</h4>
+    <div class="fluxo">
+      <div class="fluxo-passo" data-cor="br"><span class="p-num">1863</span><b>A aliança de López</b><strong>Solano López se alia ao Partido Blanco</strong>, que governava o Uruguai, para <strong>garantir acesso ao porto de Montevidéu</strong>.</div>
+      <div class="fluxo-passo" data-cor="br"><span class="p-num">1864</span><b>A intervenção</b>Os <strong>Blancos são derrubados</strong> do governo pelos <strong>Colorados</strong>, apoiados militarmente por <strong>Brasil e Argentina</strong>.</div>
+      <div class="fluxo-passo" data-cor="cm"><span class="p-num">Dez. 1864</span><b>A represália paraguaia</b>Aprisionamento do navio brasileiro <strong><em>Marquês de Olinda</em></strong>, que navegava pelo rio Paraguai rumo a Cuiabá, e <strong>invasão do Mato Grosso</strong> em <strong>26 de dezembro de 1864</strong>.</div>
+      <div class="fluxo-passo" data-cor="cm"><span class="p-num">1865</span><b>A guerra se generaliza</b>O Paraguai invade <strong>Corrientes e Entre Ríos</strong> (províncias argentinas) e parte do <strong>Rio Grande do Sul</strong> — colocando a <strong>Argentina no conflito</strong>.</div>
+      <div class="fluxo-passo" data-cor="cm"><span class="p-num">1865</span><b>Tríplice Aliança</b><strong>Brasil, Argentina e Uruguai</strong> formam a <strong>Tríplice Aliança</strong> e entram em guerra <strong>em bloco</strong> contra o Paraguai.</div>
+    </div>
+
+    <div class="caixa c-brasil">
+      <p class="caixa-rot">A cadeia causal — o que o slide deixa explícito</p>
+      <p style="margin-bottom:0">O material é claro: <strong>“O ataque paraguaio ao Brasil foi uma represália à invasão do território uruguaio, conduzida pelo governo brasileiro em favor dos Colorados e contra os Blancos (aliados de Solano López).”</strong> Ou seja: <strong>quem move a primeira peça é o Brasil</strong>, ao intervir no Uruguai. O Paraguai reage. Esse detalhe é essencial: derruba a versão tradicional de que o conflito começou com uma agressão gratuita de López. O objetivo declarado de Solano López era <strong>mandar tropas para o Uruguai e ajudar os Blancos a derrubar os Colorados</strong> — a invasão do Mato Grosso e do território argentino era o caminho para chegar lá.</p>
+    </div>
+
+    <div class="caixa c-atencao">
+      <p class="caixa-rot">Dados do primeiro ataque</p>
+      <p style="margin-bottom:0">A ocupação paraguaia no Mato Grosso foi conduzida por <strong>7.700 soldados</strong>, que derrotaram facilmente as fracas forças de defesa da região: <strong>875 militares do Exército</strong> e <strong>3 mil membros da Guarda Nacional</strong>. Guarde a desproporção — ela explica por que o Brasil foi pego de surpresa.</p>
+      <p style="margin-bottom:0" class="caixa c-fonte">Fonte citada nos slides: “Guerra do Paraguai”, Brasil Escola.</p>
+    </div>
+
+    <h4>O conflito militar</h4>
+    <div class="caixa c-brasil">
+      <p class="caixa-rot">O dado que inverte a intuição</p>
+      <p style="margin-bottom:0"><strong>No início da guerra, o exército paraguaio era MAIOR do que os exércitos do Brasil, do Uruguai e da Argentina SOMADOS.</strong> A ofensiva militar coube ao Paraguai, que havia desenvolvido uma <strong>capacidade militar respeitável</strong>, com investimento em <strong>ferrovias, manufaturas e produção de armas (metalurgia)</strong> — o que, segundo o material, indica “certa preparação para um provável enfrentamento militar e <strong>pretensões imperialistas dos ditadores paraguaios</strong>”.</p>
+    </div>
+
+    <h5>Como o Brasil montou seu exército</h5>
+    <p>O material descreve a improvisação brasileira com franqueza. O Brasil <strong>mobiliza a Guarda Nacional</strong> e começa a formar um <strong>exército nacional</strong> composto por:</p>
+    <ul class="limpa">
+      <li><strong>“Voluntários da Pátria”</strong>;</li>
+      <li><strong>escravizados do Estado</strong>;</li>
+      <li><strong>escravizados alistados por seus senhores</strong> — para que os próprios senhores <strong>não precisassem ir à guerra</strong>.</li>
+    </ul>
+    <p>O material acrescenta o detalhe decisivo: <strong>a “liberdade” era uma promessa</strong> para os escravizados mobilizados no conflito.</p>
+
+    <div class="caixa c-atencao">
+      <p class="caixa-rot">Por que isso importa politicamente</p>
+      <p style="margin-bottom:0">Homens escravizados foram enviados a morrer <strong>em nome de uma nação que não os reconhecia como cidadãos</strong>, com a liberdade como pagamento. Os que voltaram vivos voltaram <strong>livres, armados, treinados e com prestígio militar</strong>. Some-se a isso a experiência do exército de lutar ao lado deles, e você tem a explicação de por que, no pós-guerra, <strong>o Exército se torna abertamente abolicionista</strong> — a ponto de, nos anos 1880, <strong>recusar-se a capturar escravizados fugidos</strong>. A guerra é um dos motores da abolição.</p>
+    </div>
+
+    <h5>A Inglaterra na guerra</h5>
+    <p>Segundo o slide, a <strong>Inglaterra vira uma grande fornecedora de armas, recursos e empréstimos para a Tríplice Aliança — em especial para o Brasil</strong>.</p>
+
+    <div class="caixa c-comp">
+      <p class="caixa-rot">Complemento para melhor compreensão — cuidado com a “tese inglesa”</p>
+      <p style="margin-bottom:0">Nos anos 1960–70, uma corrente <strong>revisionista</strong> (Júlio José Chiavenatto e outros) sustentou que a Inglaterra <strong>teria provocado a guerra</strong> para destruir um Paraguai autônomo e industrializado. A historiografia atual — com destaque para <strong>Francisco Doratioto</strong>, autor citado no seu próprio material — <strong>rejeita essa tese</strong>: não há documentação de instigação britânica, o Paraguai não era um paraíso industrial autossuficiente, e as causas foram <strong>regionais</strong> (disputa pela hegemonia platina). O que é <strong>documentado</strong> é o que o slide afirma: a Inglaterra <strong>lucrou</strong> vendendo armas e emprestando dinheiro. <strong>Fornecedor e credor ≠ mandante.</strong> Distinguir as duas coisas é exatamente o tipo de precisão que a FUVEST e a Unicamp premiam.</p>
+    </div>
+
+    <h4>As batalhas</h4>
+    <div class="tab-env">
+      <table>
+        <caption>As principais batalhas — conforme os slides</caption>
+        <thead><tr><th>Batalha</th><th>Data</th><th>O que aconteceu</th></tr></thead>
+        <tbody>
+          <tr class="destaca"><td><strong>Riachuelo</strong></td><td class="num">jun. 1865</td><td>A Marinha brasileira <strong>destruiu quase todos os barcos da marinha paraguaia</strong>. Com isso, pôde <strong>controlar a navegação dos rios da Bacia Platina</strong>, impondo um <strong>bloqueio que isolou o Paraguai</strong> de qualquer ligação com o mercado externo. Registrada na tela de <strong>Victor Meirelles</strong> (cópia de Oscar Pereira da Silva).</td></tr>
+          <tr><td><strong>Tuiuti</strong> (1ª Batalha)</td><td class="num">24 mai. 1866</td><td>O <strong>maior e mais sangrento embate campal</strong> de toda a guerra e <strong>de todo o continente sul-americano</strong>: envolveu <strong>mais de 55 mil homens</strong>, numa região pantanosa, arenosa e de difícil locomoção, no sudoeste do Paraguai.</td></tr>
+          <tr><td><strong>Curupaiti</strong></td><td class="num">set. 1866</td><td>Os exércitos aliados atacaram o Forte de Curupaiti e <strong>sofreram grandes derrotas</strong>, com número de mortos variando entre <strong>4 mil e 9 mil</strong>, conforme diferentes fontes.</td></tr>
+          <tr><td><strong>Tomada de Humaitá</strong></td><td class="num">jul. 1868</td><td>Ocupação da <strong>maior posição defensiva dos paraguaios</strong>, a Fortaleza de Humaitá.</td></tr>
+          <tr><td><strong>Invasão e saque de Assunção</strong></td><td class="num">jan. 1869</td><td>Tomada da capital. A partir daí a guerra <strong>transforma-se em uma caçada a Solano López</strong>.</td></tr>
+          <tr class="destaca"><td><strong>Campo Grande / Acosta Ñu</strong></td><td class="num">1869</td><td>Nessa batalha, <strong>as tropas paraguaias eram compostas basicamente por adolescentes com menos de 15 anos</strong>.</td></tr>
+          <tr><td><strong>Cerro Corá</strong></td><td class="num">mar. 1870</td><td>A guerra <strong>encerra-se oficialmente</strong> quando <strong>Solano López é morto por soldados brasileiros</strong>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="caixa c-fonte">Fontes citadas nos slides: Mundo Educação e Brasil Escola.</p>
+
+    <div class="caixa c-brasil">
+      <p class="caixa-rot">Riachuelo é a batalha decisiva — entenda por quê</p>
+      <p style="margin-bottom:0">Sem a marinha paraguaia, o país fica <strong>sem saída para o mar</strong> — exatamente o que Solano López queria evitar. O bloqueio o corta de armas, munição e comércio. A partir de Riachuelo, <strong>começa o recuo das tropas paraguaias para defender o próprio território</strong>, e o palco da guerra passa a ser <strong>quase exclusivamente dentro do Paraguai</strong>. É por isso que a devastação recaiu sobre o Paraguai: a guerra deixou de ser ofensiva e virou <strong>invasão</strong>. Numa dissertativa, escreva: <em>Riachuelo (1865) inverteu a iniciativa estratégica do conflito.</em></p>
+    </div>
+
+    <div class="caixa c-comp">
+      <p class="caixa-rot">Complemento para melhor compreensão — Acosta Ñu</p>
+      <p style="margin-bottom:0">A batalha de <strong>Campo Grande / Acosta Ñu</strong> ocorreu em <strong>16 de agosto de 1869</strong>. Contra cerca de 20 mil aliados, o Paraguai alinhou aproximadamente 3.500 combatentes, em sua maioria <strong>crianças e adolescentes</strong> — alguns com <strong>menos de 12 anos</strong>, com barbas pintadas no rosto para parecerem adultos. No Paraguai, <strong>16 de agosto é o Dia da Criança</strong>, em memória dessa batalha. É a imagem mais eloquente do que significa uma guerra de aniquilação, e um dado que impressiona qualquer corretor de dissertativa.</p>
+    </div>
+
+    <h4>As consequências</h4>
+
+    <h5>Para o Paraguai</h5>
+    <ul class="limpa">
+      <li><strong>Perda de 40% do território</strong> para o Brasil e para a Argentina.</li>
+      <li><strong>Perda de 60% a 69% da população</strong> — de <strong>420 mil</strong> para <strong>166.351</strong> habitantes. No campo de batalha e <strong>por doenças</strong> (sarampo, varíola, febre amarela e cólera). <strong>Principalmente a população masculina.</strong></li>
+      <li><strong>Economia, infraestrutura e base manufatureira destruídas</strong>, além de <strong>indenizações</strong> a serem pagas a Argentina e Brasil.</li>
+    </ul>
+
+    <h5>Para a Argentina e o Uruguai</h5>
+    <ul class="limpa">
+      <li><strong>Argentina:</strong> dos <strong>30 mil mobilizados</strong>, perdeu <strong>18 mil</strong> (na guerra e por doenças). <strong>Ganhou territórios</strong> e foi <strong>economicamente beneficiada</strong> por ser a <strong>principal base de abastecimento das tropas</strong> em guerra.</li>
+      <li><strong>Uruguai:</strong> dos <strong>5.583 mobilizados</strong>, <strong>3.120 morreram</strong>.</li>
+    </ul>
+    <p class="caixa c-fonte">DORATIOTO, Francisco. <em>Maldita Guerra: nova história da Guerra do Paraguai.</em> São Paulo: Companhia das Letras, 2002, p. 93. Citado no slide 25.</p>
+
+    <h5>Para o Brasil</h5>
+    <div class="tab-env">
+      <table>
+        <caption>Balanço brasileiro da guerra — conforme o slide 26</caption>
+        <thead><tr><th>Dimensão</th><th>Dado / consequência</th></tr></thead>
+        <tbody>
+          <tr><td>Humana</td><td>Foram <strong>mobilizados 139.000 soldados</strong>; <strong>50.000 morreram</strong> — <strong>2/3 por doenças</strong>.</td></tr>
+          <tr><td>Territorial</td><td><strong>Ganhou territórios no Mato Grosso.</strong></td></tr>
+          <tr class="destaca"><td>Financeira</td><td>Gastou <strong>614 mil contos de réis</strong>, o equivalente a <strong>11 vezes o orçamento público nacional de 1864</strong>.</td></tr>
+          <tr class="destaca"><td>Militar</td><td><strong>Organização e modernização do Exército</strong>, que tem seu <strong>“espírito de corpo” fortalecido</strong> — <strong>virando um protagonista político a partir daí</strong>.</td></tr>
+          <tr class="destaca"><td>Social</td><td><strong>O movimento abolicionista se fortalece</strong>, tendo o <strong>apoio explícito do Exército</strong>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>O material fecha com a frase decisiva: <strong>“Alguns desses fatores serão importantes na decadência e no fim do Império.”</strong> O material ilustra o ponto com <strong>charges de Angelo Agostini</strong>, publicadas no periódico <em>Vida Fluminense</em>.</p>
+
+    <div class="esquema">POR QUE A GUERRA DERRUBA O IMPÉRIO — a bomba-relógio
+
+  GUERRA DO PARAGUAI (1864–1870)
+        │
+        ├──► <u>DÍVIDA COLOSSAL</u>  (11× o orçamento de 1864)
+        │     → empréstimos ingleses → Estado fragilizado
+        │
+        ├──► <b>EXÉRCITO MODERNIZADO E ORGULHOSO</b>
+        │     → nasce a "Questão Militar" (1880s)
+        │     → o Exército vira ator político autônomo
+        │     → <b>será ele quem dá o golpe em 15/11/1889</b>
+        │
+        └──► <b>ABOLICIONISMO FORTALECIDO</b>
+              → escravizados combateram e foram libertados
+              → o Exército se recusa a caçar fugitivos
+              → 1871 Lei do Ventre Livre
+              → 1885 Lei dos Sexagenários
+              → 1888 <b>LEI ÁUREA</b>
+              → a elite escravista abandona a monarquia
+              → 1889 <b>PROCLAMAÇÃO DA REPÚBLICA</b></div>
+
+    <h4>Doenças e mortalidade: os quadros finais do material</h4>
+    <p>Os slides finais trazem um quadro de doenças e dois gráficos comparativos. O quadro de doenças é o seguinte:</p>
+
+    <div class="tab-env">
+      <table>
+        <caption>Doenças na Guerra do Paraguai e impacto estimado — quadro do slide 27</caption>
+        <thead><tr><th>Doença</th><th>Impacto estimado</th></tr></thead>
+        <tbody>
+          <tr class="destaca"><td><strong>Cólera</strong></td><td>Mais de <strong>4.500 mortes</strong> entre soldados brasileiros</td></tr>
+          <tr><td><strong>Malária</strong></td><td>Alta incidência em áreas alagadas, como o <strong>Pantanal</strong></td></tr>
+          <tr><td><strong>Varíola</strong></td><td>Surtos contagiosos durante os deslocamentos</td></tr>
+          <tr><td><strong>Pneumonia</strong></td><td>Comum entre soldados mal agasalhados</td></tr>
+          <tr><td><strong>Disenteria e diarreia infecciosa</strong></td><td>Altamente prevalente nos acampamentos</td></tr>
+          <tr><td>Sífilis e outras ISTs</td><td>Alta incidência em zonas de prostituição</td></tr>
+          <tr><td>Febre amarela</td><td>Casos registrados, com menor impacto</td></tr>
+          <tr><td>Tétano</td><td>Casos esporádicos, mas graves</td></tr>
+          <tr><td>Tuberculose</td><td>Registrada em soldados debilitados</td></tr>
+          <tr><td>Hepatite</td><td>Casos isolados em áreas tropicais</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="caixa c-chave">
+      <p class="caixa-rot">A lição estrutural deste quadro</p>
+      <p style="margin-bottom:0">Guarde a proporção que o próprio material dá: dos <strong>50 mil brasileiros mortos, 2/3 morreram de doença</strong>, não de bala. No século XIX, <strong>a guerra matava mais por bactéria do que por combate</strong> — acampamentos superlotados, água contaminada, ausência de saneamento e de antibióticos. Isso vale para a Guerra do Paraguai <em>e</em> para a Guerra de Secessão (Parte I). É um dos raros pontos em que <strong>História e Biologia se encontram</strong> em prova, e o ENEM adora essa interface.</p>
+    </div>
+
+    <h5>Os dois gráficos dos slides finais</h5>
+    <p>O material apresenta ainda dois gráficos de barras:</p>
+    <ul class="limpa">
+      <li><strong>Gráfico 1 — mortes por país na Guerra do Paraguai</strong>, dividindo <em>mortes em combate</em> e <em>mortes por doenças</em>: Paraguai (100 mil / 175 mil), Brasil (20 mil / 40 mil), Argentina (10 mil / 20 mil), Uruguai (5 mil / 5 mil).</li>
+      <li><strong>Gráfico 2 — comparação entre a Guerra Civil dos EUA e a Guerra do Paraguai</strong>, por causa da morte (doenças, combate, outras causas).</li>
+    </ul>
+
+    <div class="caixa c-atencao">
+      <p class="caixa-rot">Atenção — os gráficos divergem dos números do próprio material</p>
+      <p style="margin-bottom:0">Compare: o <strong>slide 26</strong> afirma que o Brasil teve <strong>50 mil mortos</strong>; o <strong>gráfico</strong> soma <strong>60 mil</strong>. O <strong>slide 25</strong>, citando <strong>Doratioto</strong>, indica que o Paraguai caiu de 420 mil para 166.351 habitantes (≈ 250 mil mortes por todas as causas); o <strong>gráfico</strong> soma 275 mil. E o segundo gráfico atribui à Guerra do Paraguai <strong>800 mil mortes</strong> no total — número muito acima de qualquer estimativa historiográfica séria.</p>
+      <p style="margin-bottom:0"><strong>O que fazer:</strong> use os gráficos apenas para captar a <strong>proporção</strong> — <em>doenças mataram mais que o combate</em>, e <em>o Paraguai foi incomparavelmente mais atingido</em>. Para <strong>números</strong> em prova, use sempre os dados dos slides 25 e 26, que vêm de <strong>Doratioto</strong>. E lembre-se: as estimativas de mortalidade paraguaia são <strong>objeto de disputa historiográfica aberta</strong>; nenhuma banca séria cobra o número exato — ela cobra a <strong>ordem de grandeza</strong> e o <strong>significado</strong>.</p>
+    </div>
+
+    <!-- ========== ESQUEMA SINTESE BRASIL ========== -->
+    <h3><span class="num">II.11</span>Esquema-síntese do 2º Reinado</h3>
+    <div class="esquema">              <b>BRASIL · 2º REINADO · 1840–1889</b>
+
+<b>1840</b> GOLPE DA MAIORIDADE ── D. Pedro II, 14 anos
+        │
+        ▼
+<b>1840–48</b> PACIFICAÇÃO ── fim das últimas revoltas
+        Liberais SP/MG 1842 · Farroupilha 1835–45 · Praieira 1848–50
+        │
+        ▼
+<b>1848→</b> CONCILIAÇÃO ── <i>PARLAMENTARISMO ÀS AVESSAS</i>
+        (o imperador nomeia o gabinete; o gabinete faz a eleição)
+        Objetivo: <u>garantir latifúndio + trabalho escravo</u>
+        Imagem-chave: charge "O rei se diverte" (1878)
+        │
+        ├── IDENTIDADE: IHGB 1838 · Von Martius · Indianismo
+        │
+┌───────┴─────────────── <b>ECONOMIA</b> ──────────────────────┐
+│ CAFÉ 1ª fase 1840–60  Vale do Paraíba                     │
+│   plantation · escravo · solo esgotado · BARÕES DO CAFÉ   │
+│   ⇒ elite MONARQUISTA                                     │
+│                                                           │
+│ CAFÉ 2ª fase 1860–1930  Oeste Paulista                    │
+│   terra roxa · imigrante · racional · BURGUESIA CAFEEIRA  │
+│   ⇒ elite REPUBLICANA (PRP 1873 → golpe 1889)             │
+│                                                           │
+│ TRABALHO: 1810 → 1831 "inglês ver" → 1844 Alves Branco    │
+│   → 1845 Bill Aberdeen → <b>1850 EUSÉBIO DE QUEIRÓS</b>          │
+│   → capital livre = <i>ERA MAUÁ</i> · imigração · tráfico interno│
+│                                                           │
+│ <b>1850 LEI DE TERRAS</b> — bloqueia o acesso do imigrante à terra│
+└───────────────────────────────────────────────────────────┘
+        │
+┌───────┴─────────── <b>POLÍTICA EXTERNA</b> ────────────────────┐
+│ Tensão com a Inglaterra (Bill Aberdeen)                   │
+│ Questão Christie 1861–65 (rompe, mas segue comerciando)   │
+│ Bacia Platina: Blancos × Colorados no Uruguai             │
+│ <b>GUERRA DO PARAGUAI 1864–1870</b>                              │
+│   Riachuelo 1865 (decisiva) · Tuiuti 1866 · Curupaiti     │
+│   Humaitá 1868 · Assunção 1869 · Acosta Ñu · Cerro Corá 1870│
+└───────────────────────────────────────────────────────────┘
+        │
+        ▼
+   <u>DÍVIDA</u> + <u>EXÉRCITO POLITIZADO</u> + <u>ABOLICIONISMO</u>
+        │
+        ▼
+   1871 Ventre Livre · 1885 Sexagenários · <b>1888 LEI ÁUREA</b>
+        │
+        ▼
+   <b>15/11/1889 — PROCLAMAÇÃO DA REPÚBLICA</b></div>
+
+    <!-- ========== PEGADINHAS BRASIL ========== -->
+    <h3><span class="num">II.12</span>Pontos de atenção e pegadinhas — Brasil</h3>
+    <div class="caixa c-atencao">
+      <p class="caixa-rot">As dez confusões mais frequentes</p>
+      <ol>
+        <li><strong>1831 ≠ 1850.</strong> A lei de <strong>1831</strong> é a “para inglês ver” (não cumprida); a que <strong>efetivamente</strong> acabou com o tráfico é a <strong>Eusébio de Queirós, de 1850</strong>.</li>
+        <li><strong>Fim do TRÁFICO ≠ fim da ESCRAVIDÃO.</strong> Erro clássico. Em 1850 acaba a <strong>importação</strong> de africanos; a escravidão continua <strong>por mais 38 anos</strong>, até 1888.</li>
+        <li><strong>Bill Aberdeen não reduziu o tráfico de imediato.</strong> A tabela do próprio material mostra que ele <strong>triplicou</strong> entre 1845 e 1848.</li>
+        <li><strong>Alves Branco é TARIFA (imposto de importação); Aberdeen é LEI INGLESA (repressão ao tráfico).</strong> Não troque os nomes nem a nacionalidade.</li>
+        <li><strong>“Às avessas” não significa que o imperador era um tirano absoluto.</strong> Havia Parlamento, eleições, partidos e imprensa livre — só que a engrenagem era <strong>acionada de cima</strong>. É uma <strong>monarquia constitucional com centralização real</strong>.</li>
+        <li><strong>Vale do Paraíba ≠ Oeste Paulista.</strong> Primeiro: escravo, predatório, monarquista. Segundo: imigrante, racional, republicano. Trocar isso derruba a questão.</li>
+        <li><strong>A Lei de Terras não distribuiu terra — ela dificultou o acesso a ela.</strong> Seu efeito é <em>oposto</em> ao do Homestead Act norte-americano.</li>
+        <li><strong>O Brasil não foi atacado “do nada” pelo Paraguai.</strong> A intervenção brasileira no Uruguai vem <strong>antes</strong>. O próprio material afirma que o ataque foi <strong>represália</strong>.</li>
+        <li><strong>Cuidado com a “tese inglesa” da Guerra do Paraguai.</strong> A Inglaterra <strong>lucrou</strong> (vendeu armas, emprestou dinheiro), mas a historiografia atual — inclusive Doratioto, citado no seu material — <strong>não sustenta</strong> que ela tenha provocado a guerra.</li>
+        <li><strong>Sistema de Parceria ≠ Imigração Subvencionada.</strong> No primeiro, quem paga é o <strong>fazendeiro</strong> (e o imigrante fica endividado); no segundo, quem paga é o <strong>Estado</strong>. A parceria <strong>fracassou</strong>, e é justamente esse fracasso que leva à subvenção.</li>
+      </ol>
+    </div>
+
+    <!-- ========== O QUE MAIS CAI BRASIL ========== -->
+    <h3><span class="num">II.13</span>O que mais cai em prova — Brasil</h3>
+    <div class="flash">
+      <div class="flash-c" data-c="br"><b>Campeão absoluto</b><strong>Parlamentarismo às avessas</strong>, geralmente com a <strong>charge</strong> “O rei se diverte” ou similar de Angelo Agostini. Cobra-se o mecanismo, não a data.</div>
+      <div class="flash-c" data-c="br"><b>Campeão absoluto</b>A <strong>corrente Alves Branco → Bill Aberdeen → Eusébio de Queirós</strong> com <strong>tabela de dados</strong> do tráfico. Já caiu no ENEM (2015, 2ª aplicação).</div>
+      <div class="flash-c" data-c="br"><b>Muito frequente</b><strong>Duas fases do café</strong> e a diferença entre as duas elites cafeeiras — chave para explicar 1889.</div>
+      <div class="flash-c" data-c="br"><b>Muito frequente</b><strong>Lei de Terras (1850)</strong> como instrumento de <strong>controle da mão de obra</strong>, não de reforma agrária.</div>
+      <div class="flash-c" data-c="br"><b>Muito frequente</b><strong>Guerra do Paraguai</strong>: causas na disputa pela Bacia Platina e consequências para o Império (dívida, Exército, abolicionismo).</div>
+      <div class="flash-c" data-c="vd"><b>Frequente</b><strong>Ferrovias e café</strong>: o transporte como gargalo e como motor de urbanização.</div>
+      <div class="flash-c" data-c="vd"><b>Frequente</b><strong>IHGB e Indianismo</strong> como construção de identidade nacional — muitas vezes cruzado com Literatura (José de Alencar) e Arte (Victor Meirelles).</div>
+      <div class="flash-c" data-c="vd"><b>Frequente</b><strong>Era Mauá</strong> e os <strong>limites</strong> da modernização num país escravista.</div>
+      <div class="flash-c" data-c="cm"><b>Comparativo</b><strong>Homestead Act × Lei de Terras</strong>: duas leis fundiárias contemporâneas com projetos sociais opostos.</div>
+    </div>
+
+    <!-- ========== QUESTOES BRASIL ========== -->
+    <h3><span class="num">II.14</span>As questões do material — resolvidas e comentadas</h3>
+
+    <div class="questao">
+      <div class="q-cab">Questão 1 · Mackenzie · Segundo Reinado e economia cafeeira</div>
+      <div class="q-corpo">
+        <p><strong>Em relação ao Segundo Reinado e à economia cafeeira, é <em>incorreto</em> afirmar que:</strong></p>
+        <ul class="q-alt">
+          <li data-l="a)">o cultivo do café tornou-se o estabilizador da economia do Império, reforçando o sistema de dominação dos senhores rurais.</li>
+          <li data-l="b)" class="certa">a decretação do Bill Aberdeen ampliou o mercado consumidor de café no Oeste Paulista e região do Vale do Paraíba, consolidando o escravismo.</li>
+          <li data-l="c)">de 1830 a 1880, quase toda a energia econômica voltou-se para o cultivo do café, que se expandia consideravelmente.</li>
+          <li data-l="d)">as estradas de ferro foram aparecendo em decorrência do aumento das regiões cultivadas e da necessidade de solucionar a questão dos transportes.</li>
+          <li data-l="e)">a solução para a falta de mão de obra cafeeira após 1850 apoiou-se no incentivo à imigração, cujas primeiras iniciativas estavam ligadas à firma Vergueiro &amp; Cia.</li>
+        </ul>
+
+        <details class="gab">
+          <summary>Ver resolução comentada</summary>
+          <div class="gab-corpo">
+            <p><strong>Gabarito: B.</strong> Atenção ao comando — pede-se a alternativa <strong>INCORRETA</strong>.</p>
+            <p><strong>Por que B está errada (e é a resposta):</strong> o <strong>Bill Aberdeen (1845)</strong> foi uma <strong>lei inglesa de repressão ao tráfico negreiro</strong>. Não tinha <strong>nada</strong> a ver com “mercado consumidor de café” — o café era vendido no <strong>exterior</strong>, não no Oeste Paulista. E o efeito de longo prazo do Bill Aberdeen foi <strong>minar</strong> o escravismo (ao levar à Lei Eusébio de Queirós), não “consolidá-lo”. A alternativa erra em <strong>três</strong> níveis: confunde <em>consumo</em> com <em>mão de obra</em>, confunde <em>mercado interno</em> com <em>externo</em>, e inverte o efeito histórico.</p>
+            <p><strong>Por que as demais estão corretas:</strong></p>
+            <ul class="limpa">
+              <li><strong>A —</strong> Confere. A tabela de exportações do seu material mostra o café indo de 18,4% a 64,5%: ele estabiliza a economia e sustenta a dominação dos senhores rurais.</li>
+              <li><strong>C —</strong> Confere. É exatamente o período das duas fases do café (Vale do Paraíba e Oeste Paulista).</li>
+              <li><strong>D —</strong> Confere. As ferrovias nascem da necessidade de <strong>escoar</strong> a produção — antes o transporte era feito por <strong>mulas em estradas de terra</strong>.</li>
+              <li><strong>E —</strong> Confere. É o <strong>Sistema de Parceria</strong>, ligado à firma <strong>Vergueiro &amp; Cia.</strong> (fazenda Ibicaba), citado no item II.8 desta aula.</li>
+            </ul>
+            <p style="margin-bottom:0"><strong>Técnica:</strong> em questão de “incorreta”, marque com um traço as alternativas que você <em>sabe</em> que estão certas. Sobra a errada. Aqui, B se denuncia sozinha ao misturar <em>tráfico de escravizados</em> com <em>consumo de café</em>.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="questao">
+      <div class="q-cab">Questão 2 · Café, transportes e urbanização</div>
+      <div class="q-corpo">
+        <p>O Segundo Reinado foi um período que vivenciou um profundo investimento na produção cafeeira no país, fato que possibilitou o investimento em transportes, facilitando o escoamento do produto. <strong>Sendo assim:</strong></p>
+        <ul class="q-alt">
+          <li data-l="a)" class="certa">houve a expansão das ferrovias que viabilizaram o crescimento e surgimento de novas <strong>cidades</strong> e o desenvolvimento do comércio e da indústria no Brasil.</li>
+          <li data-l="b)">houve a expansão das linhas de ônibus, que facilitou o transporte não somente dos produtos, mas dos trabalhadores.</li>
+          <li data-l="c)">houve a expansão das ferrovias que viabilizaram o crescimento e surgimento de novas <strong>fazendas</strong> e o desenvolvimento do comércio e da indústria no Brasil.</li>
+          <li data-l="d)">houve a expansão da quantidade de navios nos portos nacionais, fato que contribuiu para o fortalecimento das relações do país com outras nações do mundo.</li>
+        </ul>
+
+        <details class="gab">
+          <summary>Ver resolução comentada</summary>
+          <div class="gab-corpo">
+            <p><strong>Gabarito: A.</strong></p>
+            <p><strong>Cuidado — A e C são quase idênticas.</strong> Mudam <strong>uma palavra</strong>: “novas <strong>cidades</strong>” (A) versus “novas <strong>fazendas</strong>” (C). É uma pegadinha de leitura, das mais comuns em prova.</p>
+            <p><strong>Por que A e não C:</strong> a alternativa termina falando em <strong>“desenvolvimento do comércio e da indústria”</strong>. Comércio e indústria são fenômenos <strong>urbanos</strong>. As ferrovias criaram <strong>núcleos urbanos ao longo dos trilhos</strong> — cada estação virou um povoado, depois vila, depois cidade (Campinas, Ribeirão Preto, Bauru e boa parte do interior paulista nasceram ou cresceram assim). Fazendas já existiam antes dos trilhos; <strong>cidades, não</strong>. A ferrovia é um agente de <strong>urbanização</strong>.</p>
+            <p><strong>Por que B e D estão erradas:</strong></p>
+            <ul class="limpa">
+              <li><strong>B — anacronismo grosseiro.</strong> “Linhas de ônibus” no século XIX não existem; o transporte motorizado coletivo é do século XX. Sempre desconfie de alternativas com tecnologia fora de época.</li>
+              <li><strong>D — verdadeira, mas não responde ao comando.</strong> Houve, sim, mais navios nos portos, mas a pergunta trata do <strong>escoamento interno</strong> da produção. Alternativa <em>correta em si</em> e <em>errada como resposta</em> é a armadilha mais sutil de todas.</li>
+            </ul>
+            <p style="margin-bottom:0"><strong>Técnica:</strong> quando duas alternativas diferem por uma única palavra, <strong>circule essa palavra</strong> e volte ao comando. A diferença é sempre o ponto da questão.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="questao">
+      <div class="q-cab">Questão 3 · IFSP · Café e mão de obra</div>
+      <div class="q-corpo">
+        <p>A partir da segunda metade do século XIX, o Brasil viu surgir gradativamente o declínio da mão de obra escrava e a introdução da mão de obra livre do imigrante, que se dirigiu à lavoura cafeeira. <strong>Sobre a relação café – mão de obra, assinale a alternativa correta.</strong></p>
+        <ul class="q-alt">
+          <li data-l="a)">o café prosperou na Bahia, que já se destacava com o fumo e o cacau; a mão de obra utilizada era a do imigrante espanhol que logo se adaptou ao calor e costumes baianos, sendo assalariado.</li>
+          <li data-l="b)">a lavoura cafeeira se estendeu do norte do Paraná até o oeste de Santa Catarina, sendo os alemães e poloneses trazidos da Europa para trabalharem como meeiros ou terceiros.</li>
+          <li data-l="c)">o café se instalou desde o Pará até São Paulo. Foi o responsável pela chegada dos japoneses, que tiveram muita dificuldade de adaptação, logo superadas. São eles os responsáveis pela instalação de sítios e chácaras no Brasil.</li>
+          <li data-l="d)">o café, produzido em latifúndios, se estendeu por todo o litoral brasileiro; a mão de obra escrava era responsável pelo plantio e a imigrante, alemã e italiana, pela secagem e descascagem, havendo harmonia no convívio entre os trabalhadores e os patrões.</li>
+          <li data-l="e)" class="certa">a lavoura cafeeira, por se adaptar melhor às áreas temperadas, encontrou na Zona da Mata (MG) e na província de São Paulo as condições ideais. Na região do Vale do Paraíba, a produção ocorreu de maneira tradicional, sendo utilizada a mão de obra escrava. Estendendo-se para o interior paulista, a mão de obra do imigrante italiano substituiu a escrava, inicialmente através da parceria e, depois, através do sistema de colonato.</li>
+        </ul>
+
+        <details class="gab">
+          <summary>Ver resolução comentada</summary>
+          <div class="gab-corpo">
+            <p><strong>Gabarito: E.</strong> A alternativa E reproduz <strong>exatamente</strong> o esquema das duas fases do café estudado no item II.4: <em>Vale do Paraíba = tradicional + escravo</em> → <em>interior paulista = imigrante italiano</em>, primeiro na <strong>parceria</strong>, depois no <strong>colonato</strong>.</p>
+            <p><strong>Por que as demais estão erradas — cada uma erra na geografia ou na etnia:</strong></p>
+            <ul class="limpa">
+              <li><strong>A — geografia errada.</strong> O café não prosperou na Bahia como cultura dominante, e o imigrante do café foi majoritariamente o <strong>italiano</strong>, não o espanhol.</li>
+              <li><strong>B — confunde as duas correntes imigratórias.</strong> Alemães e poloneses foram para <strong>colônias de povoamento</strong> no Sul, como <strong>pequenos proprietários</strong> — não para as fazendas de café como meeiros. É exatamente a distinção do complemento do item II.8.</li>
+              <li><strong>C — anacronismo.</strong> A imigração japonesa começa em <strong>1908</strong> (navio <em>Kasato Maru</em>), já na República — não no 2º Reinado. E o café não se instalou “do Pará a São Paulo”.</li>
+              <li><strong>D — dois erros.</strong> O café não se estendeu “por todo o litoral” (era cultura de <strong>planalto</strong>, de altitude, terra roxa e clima temperado), e a menção à <strong>“harmonia no convívio entre trabalhadores e patrões”</strong> é falsa: houve revoltas de colonos, e o fracasso do Sistema de Parceria decorreu justamente do <strong>endividamento e do conflito</strong>. <em>Desconfie sempre de alternativas que descrevem relações de trabalho como “harmoniosas”.</em></li>
+            </ul>
+            <p style="margin-bottom:0"><strong>Bônus — o sistema de colonato.</strong> Vale conhecer o termo, que aparece na alternativa correta: regime em que o imigrante recebia (i) um <strong>salário fixo</strong> pelo trato dos cafeeiros, (ii) um <strong>pagamento por produção</strong> na colheita e (iii) o direito de <strong>plantar alimentos entre as fileiras</strong> de café para consumo próprio. Foi mais estável que a parceria e virou o padrão do Oeste Paulista.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== VÍDEOS BRASIL ========== -->
+<section id="br-video" class="bloco">
+  <div class="faixa">
+    <h3 style="margin-top:0"><span class="num">II.15</span>Aulas completas no YouTube — 2º Reinado</h3>
+    <p>Clique no cartão e vá <strong>direto ao vídeo</strong>. Sugestão de ordem: panorama do período → economia cafeeira → Guerra do Paraguai → crise final do Império.</p>
+
+    <div class="videos">
+      <a class="video" href="https://www.youtube.com/watch?v=2skEPARnorI" target="_blank" rel="noopener noreferrer">
+        <span class="v-canal">Débora Aladim</span>
+        <span class="v-tit">O Segundo Reinado — História do Brasil pelo Brasil, aula 13</span>
+        <p class="v-desc">Aula gravada em Petrópolis, no cenário do próprio período. Cobre parlamentarismo, política interna e o funcionamento do 2º Reinado. É a aula mais completa e mais bem produzida sobre o tema em português — comece por ela.</p>
+        <span class="v-link">youtube.com/watch?v=2skEPARnorI</span>
+      </a>
+
+      <a class="video" href="https://www.youtube.com/watch?v=Nir4-ql0U6s" target="_blank" rel="noopener noreferrer">
+        <span class="v-canal">Débora Aladim</span>
+        <span class="v-tit">Resumo de História: Segundo Reinado</span>
+        <p class="v-desc">Resumo completo do período em formato de videoaula de quadro. Excelente para a <strong>segunda passada</strong> no conteúdo, alguns dias depois de estudar por este material — repetição espaçada funciona.</p>
+        <span class="v-link">youtube.com/watch?v=Nir4-ql0U6s</span>
+      </a>
+
+      <a class="video" href="https://www.youtube.com/watch?v=oISI5OwOXXI" target="_blank" rel="noopener noreferrer">
+        <span class="v-canal">Débora Aladim</span>
+        <span class="v-tit">Guerra do Paraguai — tudo que você precisa saber</span>
+        <p class="v-desc">Aula 14 do mesmo curso, gravada em Dourados e Ponta Porã (MS), na região da fronteira. Causas, batalhas e consequências. Cobre com folga tudo o que está no item II.10 desta aula.</p>
+        <span class="v-link">youtube.com/watch?v=oISI5OwOXXI</span>
+      </a>
+
+      <a class="video" href="https://www.youtube.com/watch?v=AQzdKejmV54" target="_blank" rel="noopener noreferrer">
+        <span class="v-canal">SOS História · Prof. Pedro Riccioppo</span>
+        <span class="v-tit">Entenda a economia do café de uma vez por todas</span>
+        <p class="v-desc">Foco total na economia cafeeira do 2º Reinado: as duas fases, o trabalho, o capital e as ferrovias. Se o item II.4 for o seu ponto fraco, este é o vídeo que resolve.</p>
+        <span class="v-link">youtube.com/watch?v=AQzdKejmV54</span>
+      </a>
+
+      <a class="video" href="https://www.youtube.com/watch?v=M6K0SGxS7WM" target="_blank" rel="noopener noreferrer">
+        <span class="v-canal">Dez de História</span>
+        <span class="v-tit">Café no Segundo Reinado — economia cafeeira no Vale do Paraíba</span>
+        <p class="v-desc">Recorte específico sobre o <strong>início</strong> da economia cafeeira, a primeira fase e os barões do café. Complementa o vídeo anterior pelo lado do Vale do Paraíba.</p>
+        <span class="v-link">youtube.com/watch?v=M6K0SGxS7WM</span>
+      </a>
+
+      <a class="video" href="https://www.youtube.com/watch?v=HrNk2uec3Nk" target="_blank" rel="noopener noreferrer">
+        <span class="v-canal">Historizando</span>
+        <span class="v-tit">Voluntários que nada! | Guerra do Paraguai</span>
+        <p class="v-desc">Abordagem crítica do recrutamento na Guerra do Paraguai: quem eram de fato os “Voluntários da Pátria” e o papel dos escravizados alistados. Casa exatamente com o trecho do seu slide sobre a formação do Exército.</p>
+        <span class="v-link">youtube.com/watch?v=HrNk2uec3Nk</span>
+      </a>
+
+      <a class="video" href="https://www.youtube.com/watch?v=u8O-ia1RLVg" target="_blank" rel="noopener noreferrer">
+        <span class="v-canal">Dez de História</span>
+        <span class="v-tit">Crise do Segundo Reinado — as questões que derrubaram D. Pedro II</span>
+        <p class="v-desc">Questão militar, questão religiosa e questão abolicionista. É o <strong>capítulo seguinte</strong> ao seu material: mostra como as consequências da Guerra do Paraguai desembocam em 1889. Assista para fechar o raciocínio.</p>
+        <span class="v-link">youtube.com/watch?v=u8O-ia1RLVg</span>
+      </a>
+
+      <a class="video" href="https://www.youtube.com/watch?v=8QvwgyZ4vsM" target="_blank" rel="noopener noreferrer">
+        <span class="v-canal">Brasil Escola</span>
+        <span class="v-tit">Segundo Reinado no Enem: Crise Imperial</span>
+        <p class="v-desc">Como o desgaste da monarquia abriu caminho para os ideais republicanos no fim do século XIX. Recorte pensado para o formato de prova.</p>
+        <span class="v-link">youtube.com/watch?v=8QvwgyZ4vsM</span>
+      </a>
+
+      <a class="video" href="https://www.youtube.com/watch?v=4AGGFS_fRPo" target="_blank" rel="noopener noreferrer">
+        <span class="v-canal">Débora Aladim</span>
+        <span class="v-tit">Segundo Reinado em 5 minutos</span>
+        <p class="v-desc">Revisão relâmpago do período inteiro. Guarde para a <strong>véspera da B3</strong>: assista uma vez na noite anterior, depois de já ter estudado tudo. Não serve como primeira exposição ao conteúdo.</p>
+        <span class="v-link">youtube.com/watch?v=4AGGFS_fRPo</span>
+      </a>
+
+      <a class="video" href="https://www.youtube.com/watch?v=bd5wJD6zBZ4" target="_blank" rel="noopener noreferrer">
+        <span class="v-canal">Tempo de Estudar · MultiRio</span>
+        <span class="v-tit">O país do café: a economia cafeeira no Segundo Reinado</span>
+        <p class="v-desc">Aula do professor Diego Knack cobrindo a importância do café, as elites cafeicultoras, a Lei Eusébio de Queirós e o surgimento da mão de obra imigrante. Didática e pausada — boa para quem quer a explicação bem devagar.</p>
+        <span class="v-link">youtube.com/watch?v=bd5wJD6zBZ4</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PARTE III — PONTE ============================ -->
+<section id="ponte" class="bloco">
+  <div class="faixa">
+    <div class="parte-cabeca p-vd">
+      <span class="eyebrow">Parte III — Síntese comparativa</span>
+      <h2>A ponte: os dois mundos no mesmo século</h2>
+      <p>Seus dois capítulos foram dados no mesmo bimestre por um motivo. Eles se cruzam — e é justamente aí que as bancas mais concorridas gostam de armar suas questões.</p>
+    </div>
+
+    <h3><span class="num">III.1</span>Linha do tempo cruzada</h3>
+    <p>Leia esta linha do tempo <strong>na horizontal</strong>: cada faixa mostra o que acontecia <em>ao mesmo tempo</em> nos dois países. As faixas <strong>verdes</strong> marcam os momentos em que as duas histórias <strong>se tocam de verdade</strong>.</p>
+
+    <div class="espinha">
+      <div class="esp-cab">
+        <span class="l">Estados Unidos</span>
+        <span class="m">Ano</span>
+        <span class="r">Brasil</span>
+      </div>
+
+      <div class="esp-linha">
+        <div class="esp-cel esp-e"><b>Compra da Luisiana</b>O território dobra de tamanho. Começa a Marcha para o Oeste.</div>
+        <div class="esp-ano">1803</div>
+        <div class="esp-cel esp-d"><b>Colônia portuguesa</b>Ainda faltam cinco anos para a vinda da Corte.</div>
+      </div>
+
+      <div class="esp-linha">
+        <div class="esp-cel esp-e"><b>Doutrina Monroe</b>“A América para os americanos.” Veta a recolonização europeia.</div>
+        <div class="esp-ano">1820<br>1823</div>
+        <div class="esp-cel esp-d"><b>Independência recente</b>1822: independência. 1824: Constituição outorgada, com Poder Moderador.</div>
+      </div>
+
+      <div class="esp-linha">
+        <div class="esp-cel esp-e"><b>Lei de Remoção dos Índios</b>Jackson. Trilha das Lágrimas.</div>
+        <div class="esp-ano">1830<br>1831</div>
+        <div class="esp-cel esp-d"><b>Abdicação e “lei para inglês ver”</b>D. Pedro I abdica (1831). Lei Feijó proíbe o tráfico — sem cumprimento.</div>
+      </div>
+
+      <div class="esp-linha">
+        <div class="esp-cel esp-e"><b>Anexação do Texas · Destino Manifesto</b>O’Sullivan cunha a expressão em 1845; começa a guerra com o México.</div>
+        <div class="esp-ano">1845</div>
+        <div class="esp-cel laco laco-e"><b>Tarifas Alves Branco → Bill Aberdeen</b>O protecionismo brasileiro (1844) provoca a represália inglesa (1845).</div>
+      </div>
+
+      <div class="esp-linha">
+        <div class="esp-cel esp-e"><b>Guadalupe Hidalgo · ouro na Califórnia</b>Metade do México muda de bandeira. Corrida do ouro.</div>
+        <div class="esp-ano">1848</div>
+        <div class="esp-cel esp-d"><b>Praieira e Conciliação</b>Última revolta do Império; começa o arranjo do parlamentarismo às avessas.</div>
+      </div>
+
+      <div class="esp-linha">
+        <div class="esp-cel esp-e"><b>Compromisso ameaçado</b>A pressão pela ocupação do Oeste corrói o acordo de 1820.</div>
+        <div class="esp-ano">1850</div>
+        <div class="esp-cel laco"><b>Lei Eusébio de Queirós + Lei de Terras</b>Fim do tráfico (4/9) e bloqueio do acesso à terra (18/9). Duas semanas de intervalo.</div>
+      </div>
+
+      <div class="esp-linha">
+        <div class="esp-cel laco laco-e"><b>Homestead Act</b>Terra barata para pequenos proprietários livres no Oeste.</div>
+        <div class="esp-ano">1854<br>1862</div>
+        <div class="esp-cel esp-d"><b>Era Mauá</b>Ferrovias, bancos, telégrafo, iluminação a gás. Modernização sem industrialização.</div>
+      </div>
+
+      <div class="esp-linha">
+        <div class="esp-cel laco laco-e"><b>Guerra de Secessão</b>1861–1865. O algodão do Sul dos EUA some do mercado mundial.</div>
+        <div class="esp-ano">1861<br>1865</div>
+        <div class="esp-cel laco"><b>Algodão brasileiro dispara</b>De 6,2% para 18,3% da pauta de exportação (tabela do item II.4). E o Brasil rompe com a Inglaterra na Questão Christie.</div>
+      </div>
+
+      <div class="esp-linha">
+        <div class="esp-cel esp-e"><b>13ª Emenda · KKK</b>Abolição constitucional — e o nascimento do terror racista sulista.</div>
+        <div class="esp-ano">1864<br>1870</div>
+        <div class="esp-cel esp-d"><b>Guerra do Paraguai</b>O maior conflito da América do Sul. Riachuelo, Tuiuti, Cerro Corá.</div>
+      </div>
+
+      <div class="esp-linha">
+        <div class="esp-cel esp-e"><b>Compra do Alasca</b>US$ 7,2 milhões da Rússia.</div>
+        <div class="esp-ano">1867<br>1871</div>
+        <div class="esp-cel esp-d"><b>Lei do Ventre Livre</b>Primeira lei abolicionista gradual do pós-guerra.</div>
+      </div>
+
+      <div class="esp-linha">
+        <div class="esp-cel esp-e"><b>Jim Crow</b>A partir de 1877, a segregação vira lei nos estados do Sul.</div>
+        <div class="esp-ano">1873<br>1877</div>
+        <div class="esp-cel esp-d"><b>Partido Republicano Paulista</b>A burguesia cafeeira do Oeste Paulista se organiza politicamente.</div>
+      </div>
+
+      <div class="esp-linha">
+        <div class="esp-cel esp-e"><b>Fim da fronteira · Wounded Knee</b>O censo declara encerrada a fronteira. Restam ~250 mil indígenas.</div>
+        <div class="esp-ano">1888<br>1890</div>
+        <div class="esp-cel esp-d"><b>Lei Áurea e Proclamação</b>1888: abolição. 1889: o Exército derruba o Império.</div>
+      </div>
+
+      <div class="esp-linha">
+        <div class="esp-cel esp-e"><b>Cuba, Filipinas, Panamá · Big Stick</b>A expansão transborda as fronteiras: imperialismo continental.</div>
+        <div class="esp-ano">1898<br>1904</div>
+        <div class="esp-cel esp-d"><b>República Velha</b>Café com leite, política dos governadores, economia ainda cafeeira.</div>
+      </div>
+    </div>
+
+    <h3><span class="num">III.2</span>Quatro comparações que rendem nota</h3>
+
+    <div class="caixa c-comp">
+      <p class="caixa-rot">Comparação 1 — as duas leis de terra</p>
+      <div class="tab-env" style="margin:12px 0 0">
+        <table>
+          <thead><tr><th>&nbsp;</th><th>Homestead Act · EUA · 1862</th><th>Lei de Terras · Brasil · 1850</th></tr></thead>
+          <tbody>
+            <tr><td><strong>O que faz</strong></td><td><strong>Facilita</strong> o acesso à terra</td><td><strong>Dificulta</strong> o acesso à terra</td></tr>
+            <tr><td><strong>Como se adquire</strong></td><td>Ocupação e cultivo</td><td>Apenas <strong>compra em dinheiro</strong></td></tr>
+            <tr><td><strong>Quem se beneficia</strong></td><td>O colono / imigrante pobre</td><td>O <strong>grande proprietário</strong></td></tr>
+            <tr><td><strong>Trabalhador que produz</strong></td><td><em>Farmer</em> — pequeno proprietário livre</td><td>Colono <strong>dependente</strong> da fazenda alheia</td></tr>
+            <tr><td><strong>Efeito de longo prazo</strong></td><td>Mercado interno forte, base para a industrialização</td><td><strong>Concentração fundiária</strong> que persiste até hoje</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin:12px 0 0"><strong>A frase para a dissertativa:</strong> <em>na mesma década, dois países americanos legislaram sobre a terra em direções opostas — e essa divergência ajuda a explicar por que um se industrializou e o outro permaneceu agroexportador.</em></p>
+    </div>
+
+    <div class="caixa c-comp">
+      <p class="caixa-rot">Comparação 2 — como cada país acabou com a escravidão</p>
+      <div class="duo" style="margin:12px 0 0">
+        <div class="duo-lado duo-a">
+          <span class="tag">Estados Unidos</span>
+          <h6>Ruptura</h6>
+          <ul style="margin-bottom:0">
+            <li>Abolição por <strong>guerra civil</strong> (600 mil mortos).</li>
+            <li><strong>Súbita e total</strong>: 13ª Emenda, 1865.</li>
+            <li>Havia um <strong>projeto econômico rival</strong> (industrial nortista) pronto para substituir o escravista.</li>
+            <li>Seguida de <strong>segregação legal</strong> (Jim Crow) por quase um século.</li>
+          </ul>
+        </div>
+        <div class="duo-lado duo-c">
+          <span class="tag">Brasil</span>
+          <h6>Erosão</h6>
+          <ul style="margin-bottom:0">
+            <li>Abolição por <strong>desgaste gradual</strong>, sem guerra civil.</li>
+            <li><strong>Em etapas</strong>: 1850 (tráfico) → 1871 (Ventre Livre) → 1885 (Sexagenários) → 1888 (Áurea).</li>
+            <li><strong>Não havia</strong> projeto industrial rival — o substituto foi <strong>imigrante na mesma lavoura</strong>.</li>
+            <li>Seguida de <strong>marginalização sem lei segregacionista</strong> — exclusão pelo mercado e pela terra.</li>
+          </ul>
+        </div>
+      </div>
+      <p style="margin:12px 0 0"><strong>O ponto comum, que é o mais importante:</strong> nos <strong>dois</strong> países, a abolição <strong>não veio acompanhada de acesso à terra, à educação ou a reparação</strong> para a população negra. Muda o método; a exclusão posterior é o mesmo fenômeno.</p>
+    </div>
+
+    <div class="caixa c-comp">
+      <p class="caixa-rot">Comparação 3 — o mito nacional</p>
+      <p style="margin-bottom:0">Os dois países fabricaram, no mesmo século, uma <strong>narrativa fundadora</strong> que embeleza a violência. Nos EUA, o <strong>Destino Manifesto</strong> e o <strong>mito do <em>Far West</em></strong>, com o pioneiro heroico e o indígena como obstáculo. No Brasil, o <strong>IHGB</strong>, a tese das <strong>“três raças em harmonia”</strong> de Von Martius e o <strong>Indianismo romântico</strong>, com o índio nobre — sempre morto ao fim do enredo. <strong>Método idêntico:</strong> transformar o povo conquistado em <em>símbolo</em> para não ter que tratá-lo como <em>sujeito</em>. Em ambos, arte e literatura fizeram o trabalho que a lei não podia fazer sozinha.</p>
+    </div>
+
+    <div class="caixa c-comp">
+      <p class="caixa-rot">Comparação 4 — a guerra como parteira</p>
+      <p style="margin-bottom:0">As duas guerras do período (<strong>Secessão 1861–65</strong> e <strong>Paraguai 1864–70</strong>) são quase <strong>simultâneas</strong> e produzem efeitos estruturalmente parecidos: <strong>(i)</strong> aceleram a <strong>abolição</strong>; <strong>(ii)</strong> fortalecem o <strong>Estado central</strong> e o <strong>Exército</strong>; <strong>(iii)</strong> matam mais por <strong>doença</strong> do que por combate; <strong>(iv)</strong> definem <strong>qual elite</strong> comandará o país nas décadas seguintes. Diferença crucial: nos EUA, a guerra foi <strong>interna</strong> e o vencedor tomou o poder; no Brasil, foi <strong>externa</strong>, e o vencedor — o <strong>Exército</strong> — voltou para casa e, vinte anos depois, <strong>derrubou quem o mandou lutar</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ REVISÃO FINAL ============================ -->
+<section id="revisao" class="bloco">
+  <div class="faixa">
+    <div class="parte-cabeca p-vd">
+      <span class="eyebrow">Fechamento</span>
+      <h2>Revisão final dos conceitos principais</h2>
+      <p>Se você tiver quinze minutos antes da prova, leia apenas esta seção. Cada cartão é um conceito que, sozinho, já rende uma questão.</p>
+    </div>
+
+    <h4>Estados Unidos no século XIX</h4>
+    <div class="flash">
+      <div class="flash-c"><b>Destino Manifesto</b>Ideologia (1845, O’Sullivan) que apresenta a expansão como <strong>missão divina e processo natural</strong>. Justifica; não legisla.</div>
+      <div class="flash-c"><b>Marcha para o Oeste</b>Expansão por <strong>compra</strong> (Luisiana 1803, Flórida 1819, Alasca 1867), <strong>guerra</strong> (México 1846–48) e <strong>diplomacia</strong> (Oregon 1846).</div>
+      <div class="flash-c"><b>Homestead Act · 1862</b>Lei de Terras dos EUA. Terra barata a quem ocupasse ⇒ pequena propriedade e <strong>trabalho livre</strong> no Oeste. Aprovada <em>durante</em> a guerra.</div>
+      <div class="flash-c" data-c="cm"><b>Indian Removal Act · 1830</b>Jackson. Remoção forçada para Oklahoma — a <strong>Trilha das Lágrimas</strong>, mais de 1.500 km. Em 1890, restavam ~250 mil indígenas (–80%).</div>
+      <div class="flash-c"><b>Compromisso de Missouri · 1820</b>Escravidão permitida ao <strong>sul de 36°30′</strong>, proibida ao norte. Rompe-se pela composição social dos colonos e por Kansas-Nebraska (1854).</div>
+      <div class="flash-c"><b>Norte × Sul</b><strong>Norte:</strong> pequena propriedade, policultura, trabalho livre, <strong>protecionismo</strong>, Republicanos. <strong>Sul:</strong> <em>plantation</em>, escravidão, <strong>livre-cambismo</strong>, Democratas.</div>
+      <div class="flash-c"><b>Guerra de Secessão · 1861–65</b>Estopim: eleição de <strong>Lincoln</strong> (1860). Vitória da União ⇒ <strong>projeto industrial</strong> imposto ao país + <strong>13ª Emenda</strong>.</div>
+      <div class="flash-c" data-c="cm"><b>Jim Crow · 1877–1960s</b>Segregação legalizada. Nome vindo do personagem de <em>blackface</em> de “Daddy” Rice (1832). Derrubada pela luta por direitos civis (Martin Luther King).</div>
+      <div class="flash-c"><b>Monroe · 1823</b>“A América para os americanos.” Doutrina <strong>defensiva</strong>: veta a recolonização europeia.</div>
+      <div class="flash-c"><b>Big Stick · 1904</b>Corolário Roosevelt. Converte Monroe em <strong>poder de polícia internacional</strong>. Cuba (Emenda Platt, Guantánamo), Panamá e o canal.</div>
+    </div>
+
+    <h4>Brasil — 2º Reinado</h4>
+    <div class="flash">
+      <div class="flash-c" data-c="br"><b>Golpe da Maioridade · 1840</b>D. Pedro II assume aos <strong>14 anos</strong>, contra a Constituição de 1824. A monarquia como remédio contra a desagregação regencial.</div>
+      <div class="flash-c" data-c="br"><b>Parlamentarismo às avessas</b>O <strong>imperador nomeia o gabinete</strong>; o gabinete organiza a eleição. Sustentado pelo <strong>Poder Moderador</strong>. “A política era tratada nos gabinetes, não nas ruas.”</div>
+      <div class="flash-c" data-c="br"><b>Conciliação · a partir de 1848</b>Liberais e conservadores se alternam para <strong>garantir latifúndio e escravidão</strong>. Charge-símbolo: “O rei se diverte” (1878).</div>
+      <div class="flash-c" data-c="br"><b>IHGB · 1838</b>Fabrica a “história oficial”. <strong>Von Martius</strong> e a “harmonia das três raças”; <strong>Indianismo</strong> romântico (Moema, Iracema, A Primeira Missa).</div>
+      <div class="flash-c" data-c="br"><b>Café — 1ª fase · 1840–60</b><strong>Vale do Paraíba</strong>: <em>plantation</em>, escravo, cultivo predatório, <strong>barões do café</strong>. Elite <strong>monarquista</strong>.</div>
+      <div class="flash-c" data-c="br"><b>Café — 2ª fase · 1860–1930</b><strong>Oeste Paulista</strong>: terra roxa, cultivo racional, imigrante, <strong>burguesia cafeeira</strong>. Elite <strong>republicana</strong> (PRP 1873 → golpe de 1889).</div>
+      <div class="flash-c" data-c="cm"><b>A corrente do fim do tráfico</b><strong>1831</strong> “inglês ver” → <strong>1844</strong> Alves Branco → <strong>1845</strong> Bill Aberdeen → <strong>1850</strong> Eusébio de Queirós. O tráfico <em>triplicou</em> entre 1845 e 1848 antes de desabar.</div>
+      <div class="flash-c" data-c="br"><b>Lei de Terras · 1850</b>Terra só por <strong>compra</strong>. Bloqueia o imigrante e o força à fazenda. <strong>Oposta</strong> ao Homestead Act.</div>
+      <div class="flash-c" data-c="br"><b>Era Mauá · 1860–70</b>Capital liberado do tráfico vai para <strong>ferrovias, bancos, telégrafo, gás</strong>. Modernização sem industrialização — Mauá falirá em 1878.</div>
+      <div class="flash-c" data-c="br"><b>Questão Christie · 1861–65</b>Rompimento diplomático com a Inglaterra que <strong>não interrompeu o comércio</strong> — a medida exata da dependência econômica.</div>
+      <div class="flash-c" data-c="cm"><b>Guerra do Paraguai · 1864–70</b>Disputa pela <strong>Bacia Platina</strong>. Estopim: intervenção brasileira no Uruguai → represália paraguaia (<em>Marquês de Olinda</em>, Mato Grosso, dez. 1864). <strong>Riachuelo (1865)</strong> é a virada.</div>
+      <div class="flash-c" data-c="cm"><b>O legado da guerra</b><strong>Dívida</strong> de 11× o orçamento de 1864 + <strong>Exército</strong> modernizado e politizado + <strong>abolicionismo</strong> fortalecido = os três motores de <strong>1888 e 1889</strong>.</div>
+    </div>
+
+    <h3><span class="num">Fechamento</span>Os três fios que você precisa levar para a prova</h3>
+    <div class="fluxo">
+      <div class="fluxo-passo" data-cor="vd"><span class="p-num">Fio 01</span><b>Toda expansão precisa de um discurso</b>Destino Manifesto nos EUA, “três raças em harmonia” no Brasil. Quando a banca mostrar uma imagem, pergunte-se: <strong>o que este quadro está escondendo?</strong></div>
+      <div class="fluxo-passo" data-cor="vd"><span class="p-num">Fio 02</span><b>Terra e trabalho andam juntos</b>Quem controla o acesso à terra controla quem trabalha para quem. Homestead Act e Lei de Terras são a mesma pergunta com respostas opostas.</div>
+      <div class="fluxo-passo" data-cor="vd"><span class="p-num">Fio 03</span><b>As guerras decidem qual elite governa</b>Nos EUA, a Secessão entrega o país à burguesia industrial. No Brasil, a Guerra do Paraguai arma o Exército que, em 1889, entrega o país à burguesia cafeeira.</div>
+    </div>
+
+    <div class="caixa c-comp">
+      <p class="caixa-rot">Antes de fechar este material</p>
+      <p style="margin-bottom:0">Faça o teste do <strong>esquema em branco</strong>: pegue uma folha e reconstrua, <strong>de memória</strong>, os dois esquemas-síntese (itens I.9 e II.11). O que você não conseguir reproduzir é exatamente o que ainda não está aprendido — volte só a esse trecho. Reconstruir estrutura vale muito mais do que reler o texto inteiro: <strong>quem lembra do esqueleto reconstrói a carne; quem decora a carne perde tudo junto.</strong></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="f-int">
+    <p><strong>Sobre este material.</strong> Aula construída a partir de dois conjuntos de slides: <em>“3P Cap. 2 — página 24 — vol. 4 — EUA no século XIX”</em> e <em>“3P Caps. 4, 5 e 6 — página 90 — vol. 4 — 2º Reinado: Política Interna, Externa e Economia (1840–1889)”</em>. Todo o conteúdo dos slides foi transcrito e explicado, incluindo tabelas, gráficos, mapas, charges, legendas e fontes.</p>
+    <p><strong>Fontes citadas nos próprios slides:</strong> Francisco Doratioto, <em>Maldita Guerra</em> (Companhia das Letras, 2002) · Emília Viotti da Costa, <em>Da senzala à colônia</em> (Unesp, 1998) · Boris Fausto, <em>História do Brasil</em> (1994) · Hélio Schlitter Silva, <em>Revista de História da Economia Brasileira</em> (1953) · Leo Huberman, <em>História da Riqueza dos EUA</em> · slavevoyages.org · ourdocuments.gov · IBGE · Brasil Escola · Mundo Educação.</p>
+    <p><strong>Vídeos.</strong> Todos os links apontam diretamente para o vídeo indicado e foram conferidos como publicamente disponíveis em <strong>17 de agosto de 2026</strong>. Se algum endereço deixar de funcionar no futuro, o título e o canal estão escritos em cada cartão — basta procurá-los pelo nome.</p>
+    <p><strong>Marcações desta aula.</strong> <span style="color:var(--verdete);font-weight:700">Verde</span> = complemento acrescentado para melhor compreensão. <span style="color:var(--carmim);font-weight:700">Vermelho</span> = ponto de atenção, pegadinha ou divergência entre o slide e a historiografia consolidada. <span style="color:var(--eua);font-weight:700">Azul</span> = conceito-chave dos EUA. <span style="color:var(--br);font-weight:700">Dourado</span> = conceito-chave do Brasil.</p>
+    <a class="topo-btn" href="#abertura">Voltar ao início</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  // Barra de progresso de leitura
+  var barra = document.getElementById('progresso');
+  var links = Array.prototype.slice.call(document.querySelectorAll('#nav a'));
+  var secoes = links.map(function(a){
+    return document.getElementById(a.getAttribute('href').slice(1));
+  }).filter(Boolean);
+
+  var pendente = false;
+  function atualizar(){
+    var doc = document.documentElement;
+    var alcance = doc.scrollHeight - doc.clientHeight;
+    var pct = alcance > 0 ? (doc.scrollTop / alcance) * 100 : 0;
+    barra.style.width = Math.min(100, Math.max(0, pct)) + '%';
+
+    // Scrollspy: a seção ativa é a última cujo topo já passou da linha de leitura
+    var linha = doc.scrollTop + 140;
+    var atual = 0;
+    for (var i = 0; i < secoes.length; i++){
+      if (secoes[i].offsetTop <= linha) atual = i;
+    }
+    // No fim da página, destaca a última seção
+    if (doc.scrollTop + doc.clientHeight >= doc.scrollHeight - 8){
+      atual = secoes.length - 1;
+    }
+    for (var j = 0; j < links.length; j++){
+      links[j].classList.toggle('ativo', j === atual);
+    }
+    pendente = false;
+  }
+
+  function agendar(){
+    if (!pendente){
+      pendente = true;
+      window.requestAnimationFrame(atualizar);
+    }
+  }
+
+  window.addEventListener('scroll', agendar, { passive: true });
+  window.addEventListener('resize', agendar);
+  atualizar();
+
+  // Ao imprimir, abre todos os gabaritos para que nada se perca no papel
+  window.addEventListener('beforeprint', function(){
+    var abas = document.querySelectorAll('details.gab');
+    for (var k = 0; k < abas.length; k++){ abas[k].open = true; }
+  });
+})();
+</script>
+
+</body>
+</html>
